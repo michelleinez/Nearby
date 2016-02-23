@@ -71,11 +71,11 @@
 					<a href="#">More Options...</a>
 				</div>
 			</div>
-		</form>
 
-		<!-- temp image -->
-		<img src="assets/temp-map.png" alt="temp-map" style="display:block;margin:auto;"/>
+		</form>
 	</div>
+	<!-- temp image -->
+	<img src="assets/temp-map.png" alt="temp-map" style="display:block;margin:auto;"/>
 
 
 </body>

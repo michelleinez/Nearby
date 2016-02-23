@@ -65,16 +65,10 @@
 					<a class="btn-floating btn-medium waves-effect waves-light blue search-button"><i class="material-icons">search</i></a>
 				</div>
 			</div>
-			<!-- <div class="row">      
-				<div class="col s2 offset-s10">
-					<a href="#">More Options...</a>
-				</div>
-			</div> -->
 		</form>
-
-		<!-- temp image -->
-		<img src="assets/temp-map.png" alt="temp-map" style="display:block;margin:auto;"/>
 	</div>
+	<!-- temp image -->
+	<img src="assets/temp-map.png" alt="temp-map" style="display:block;margin:auto;"/>
 
 
 </body>

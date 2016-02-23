@@ -14,18 +14,51 @@
 	<!-- Materialize - Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="assets/index.css">
+	<!-- Materialize - buttons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="assets/main.css">
 </head>
 <body>
 	<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Nearby</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">How does it work?</a></li>
-        <li><a href="#">Log In</a></li>
-      </ul>
-    </div>
-  </nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">Nearby</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="#">How does it work?</a></li>
+				<li><a href="#">Log In</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="row">
+		<form class="col s12">
+			<div class="row">
+				<div class='col l1 offset-l1'>
+					<label class="search-label">Find a</label>
+				</div>
+				<div class="input-field col l3">
+					<input placeholder="movie theater" name="place_1" type="text" class="validate search-text">
+				</div>
+				<div class='col l1'>
+					<label class="search-label">with</label>
+				</div>
+				<div class="input-field col l3">
+					<input placeholder="ice cream" name="place_2" type="text" class="validate search-text">
+				</div>
+				<div class='col l1'>
+					<label class="search-label">nearby!</label>
+				</div>
+				<div class='col l1'>
+					<a class="btn-floating btn-medium waves-effect waves-light blue search-button"><i class="material-icons">search</i></a>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="col s2 offset-s10">
+					<a href="#">More Options...</a>
+				</div>
+			</div> -->
+		</form>
+	</div>
 
 
 </body>

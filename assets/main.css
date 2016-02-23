@@ -1,6 +1,6 @@
 .nav-wrapper {
 	background: #ff8533;
-	padding-left: 25px;
+	padding: 0px 25px;
 }
 
 .search-label {
@@ -18,4 +18,17 @@
 	position: relative;
 	top: 1.1rem;
 	left: 1.1rem;
+}
+
+.nearby-icon {
+	height: 3.8rem;
+	top: 1rem;
+	margin-right: 25px;
+}
+.modal .row{
+	margin-bottom: 0px;
+}
+
+.modal-header, .remember, .login-helper-link {
+	margin-top: 0px !important;
 }

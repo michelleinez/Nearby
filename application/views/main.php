@@ -18,12 +18,25 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="assets/main.css">
+
+	<script>
+		$( document ).ready(function(){
+			$(".button-collapse").sideNav();
+
+
+		})
+	</script>
 </head>
 <body>
 	<nav>
 		<div class="nav-wrapper">
 			<a href="#" class="brand-logo">Nearby</a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="#">How does it work?</a></li>
+				<li><a href="#">Log In</a></li>
+			</ul>
+			<ul class="side-nav" id="mobile-nav">
 				<li><a href="#">How does it work?</a></li>
 				<li><a href="#">Log In</a></li>
 			</ul>
@@ -52,12 +65,15 @@
 					<a class="btn-floating btn-medium waves-effect waves-light blue search-button"><i class="material-icons">search</i></a>
 				</div>
 			</div>
-			<!-- <div class="row">
+			<!-- <div class="row">      
 				<div class="col s2 offset-s10">
 					<a href="#">More Options...</a>
 				</div>
 			</div> -->
 		</form>
+
+		<!-- temp image -->
+		<img src="assets/temp-map.png" alt="temp-map" style="display:block;margin:auto;"/>
 	</div>
 
 

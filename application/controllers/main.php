@@ -11,4 +11,8 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('main');
 	}
+
+	public function how_does_it_work(){
+		$this->load->view('how-does-it-work');
+	}
 }

@@ -35,7 +35,7 @@
 </head>
 <body>
 
-	<script>
+	<script> // Facebook login api
 
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {

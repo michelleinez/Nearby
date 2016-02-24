@@ -51,7 +51,7 @@
         url: '/main/facebook_login',
         data: {clientID: clientID, accessToken: accessToken, email: email, first_name: first_name, last_name: last_name},
       });
-
+  
     })
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.

@@ -36,6 +36,7 @@
 }
 
 .login-header {
+<<<<<<< HEAD
 	margin-top: 2.6rem !important;
 	min-width: 85px;
 }
@@ -43,4 +44,9 @@
 .small {				/* rows */
 	margin-bottom: 0px;
 	padding-bottom: 0px;
+=======
+	margin-top: 2.6rem;
+	padding-left: 0px !important;
+
+>>>>>>> development
 }

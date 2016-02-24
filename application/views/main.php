@@ -18,7 +18,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<!-- favicon -->
-	<link rel="icon" type='image/ico' href="favicon.ico" />
+	<link rel="icon" href="favicon.ico" />
 
 	<!-- main style sheet -->
 	<link rel="stylesheet" type="text/css" href="assets/main.css">
@@ -41,11 +41,11 @@
 			<a href="#" class="brand-logo">Nearby</a>
 			<a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="#" class="waves-effect waves-light">How does it work?</a></li>
+				<li><a href="how-does-it-work" class="waves-effect waves-light">How does it work?</a></li>
 				<li><a href="#login-modal" class="waves-effect waves-light  modal-trigger">Log In</a></li>
 			</ul>
 			<ul class="side-nav right" id="mobile-nav">
-				<li><a href="#">How does it work?</a></li>
+				<li><a href="how-does-it-work">How does it work?</a></li>
 				<li><a href="#login-modal" class="modal-trigger">Log In</a></li>
 			</ul>
 		</div>
@@ -65,20 +65,20 @@
 					<div class="row">
 						<div class="input-field col s12">
 							<i class="mdi-social-person-outline prefix"></i>
-							<input id="username" type="text">
-							<label for="username" class="center-align">Username</label>
+							<input type="text" id="email">
+							<label for="email" class="center-align">Email</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
 							<i class="mdi-action-lock-outline prefix"></i>
-							<input id="password" type="password">
+							<input type="password" id="password">
 							<label for="password">Password</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12 remember">
-							<input type="checkbox" id="remember-me" />
+							<input type="checkbox"  id="remember-me">
 							<label for="remember-me">Remember me</label>
 						</div>
 					</div>
@@ -117,22 +117,22 @@
 					<div class="row">
 						<div class="input-field col s12">
 							<i class="mdi-social-person-outline prefix"></i>
-							<input id="username" type="text">
-							<label for="username" class="center-align">Username</label>
+							<input type="email" id="email">
+							<label for="email" class="center-align">Email</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
 							<i class="mdi-action-lock-outline prefix"></i>
-							<input id="password" type="password">
+							<input type="password" id="password">
 							<label for="password">Password</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
 							<i class="mdi-action-lock-outline prefix"></i>
-							<input id="password_comfirm" type="password">
-							<label for="password">Confirm Password</label>
+							<input type="password" id="password_comfirm">
+							<label for="password_comfirm">Confirm Password</label>
 						</div>
 					</div>
 					<div class="row">
@@ -152,9 +152,9 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="input-field col s6 m6 l6">
+						<div class="input-field col s12">
 							<p class="login-helper-link margin medium-small">
-								<a href="#login-modal" class="modal-trigger modal-close">Login Now!</a>
+								<a href="#login-modal" class="modal-trigger modal-close">Already Registered? Log In!</a>
 							</p>
 						</div>
 					</div>

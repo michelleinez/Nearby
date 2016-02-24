@@ -22,13 +22,19 @@
 
 .nearby-icon {
 	height: 3.8rem;
-	top: 1rem;
+	margin-top: 2px;
 	margin-right: 25px;
 }
-.modal .row{
+.small {
 	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
 
 .modal-header, .remember, .login-helper-link {
 	margin-top: 0px !important;
+}
+
+.login-header {
+	margin-top: 2.6rem;
+	padding-left: 0px !important;
 }

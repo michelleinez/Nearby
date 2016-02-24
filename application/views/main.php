@@ -56,27 +56,29 @@
 		<div id="login-modal" class="modal col s10 offset-s1 m6 offset-m3 l4 offset-l4">
 			<div class="modal-content">
 				<form class="login-form">
-					<div class="row">
-						<div class="input-field center modal-header">
+					<div class="row small">
+						<div class="input-field col s5 modal-header">
 							<img src="assets/nearby-icon-small.png" alt="nearby-icon" class="responsive-img valign">
-							<h5 class="center login-form-text">Log In</h5>
+						</div>
+						<div class="row small">
+							<h5 class="col s7 login-header">Log In</h5>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<i class="mdi-social-person-outline prefix"></i>
 							<input type="text" id="email">
 							<label for="email" class="center-align">Email</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<i class="mdi-action-lock-outline prefix"></i>
 							<input type="password" id="password">
 							<label for="password">Password</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12 remember">
 							<input type="checkbox"  id="remember-me">
 							<label for="remember-me">Remember me</label>
@@ -87,7 +89,15 @@
 							<a href="/" class="btn waves-effect orange waves-light col s12">Login</a>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
+						<div class="input-field login-helper-link col s6">
+							<a href="/" class="btn blue waves-effect waves-light col s12">Facebook</a>
+						</div>
+						<div class="input-field login-helper-link col s6">
+							<a href="/" class="btn red waves-effect waves-light col s12">Google</a>
+						</div>
+					</div>
+					<div class="row small">
 						<div class="input-field col s6">
 							<p class="login-helper-link medium-small">
 								<a href="#register-modal" class="modal-trigger modal-close">Register Now!</a>
@@ -109,49 +119,38 @@
 		<div id="register-modal" class="modal col s10 offset-s1 m6 offset-m3 l4 offset-l4 ">
 			<div class="modal-content">
 				<form class="login-form">
-					<div class="row">
-						<div class="input-field modal-header center">
+					<div class="row small">
+						<div class="input-field center">
 							<h5 class="center login-form-text modal-header">Register</h5>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<i class="mdi-social-person-outline prefix"></i>
 							<input type="email" id="email">
 							<label for="email" class="center-align">Email</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<i class="mdi-action-lock-outline prefix"></i>
 							<input type="password" id="password">
 							<label for="password">Password</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<i class="mdi-action-lock-outline prefix"></i>
 							<input type="password" id="password_comfirm">
 							<label for="password_comfirm">Confirm Password</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<a href="/" class="btn waves-effect orange waves-light col s12">Register</a>
 						</div>
 					</div>
-					<div class="row">
-						<p class="input-field col s12">Or register with:</p>
-					</div>
-					<div class="row">
-						<div class="input-field login-helper-link col s6">
-							<a href="/" class="btn blue waves-effect waves-light col s12">Facebook</a>
-						</div>
-						<div class="input-field login-helper-link col s6">
-							<a href="/" class="btn red waves-effect waves-light col s12">Google</a>
-						</div>
-					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<p class="login-helper-link margin medium-small">
 								<a href="#login-modal" class="modal-trigger modal-close">Already Registered? Log In!</a>

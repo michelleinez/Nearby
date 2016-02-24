@@ -11,10 +11,8 @@ class Main extends CI_Controller {
 	public function index(){
 		$this->load->view('main');
 	}
-
+	
 	public function facebook_login(){
-
-
 		$user = array(
 				'first_name' => $this->input->post('first_name'),
 				'last_name' => $this->input->post('last_name'),
@@ -26,5 +24,10 @@ class Main extends CI_Controller {
 		$this->session->set_userdata($user);
 	}
 
+
+
+	public function how_does_it_work(){
+		$this->load->view('how-does-it-work');
+	}
 
 }

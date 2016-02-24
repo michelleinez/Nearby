@@ -1,9 +1,6 @@
 .nav-wrapper {
 	background: #ff8533;
-}
-
-.brand-logo {
-	margin-left: 25px;
+	padding: 0px 25px;
 }
 
 .search-label {
@@ -23,6 +20,22 @@
 	left: 1.1rem;
 }
 
-.fb-login-button: hover {
-	z-depth-2;
+.nearby-icon {
+	height: 3.8rem;
+	margin-top: 2px;
+	margin-right: 25px;
+}
+.small {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+.modal-header, .remember, .login-helper-link {
+	margin-top: 0px !important;
+}
+
+.login-header {
+	margin-top: 2.6rem;
+	padding-left: 0px !important;
+
 }

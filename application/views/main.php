@@ -18,23 +18,24 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<!-- favicon -->
-	<link rel="icon" type='image/ico' href="favicon.ico" />
+	<link rel="icon" href="favicon.ico" />
 
 	<!-- main style sheet -->
 	<link rel="stylesheet" type="text/css" href="assets/main.css">
+
+	<script>
+		$( document ).ready(function(){
+			// sideNav handeler
+			$(".button-collapse").sideNav();
+
+			// login and register modal handler
+			$('.modal-trigger').leanModal();
+		})
+	</script>
 </head>
 <body>
 
 	<script>
-	$( document ).ready(function(){
-		// sideNav handeler
-		$(".button-collapse").sideNav();
-
-		// login and register modal handler
-		$('.modal-trigger').leanModal();
-
-
-	})
 
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
@@ -131,8 +132,6 @@
 
 	</script>
 
-
-
 	<!--============================= nav-bar ===============================-->
 	<nav>
 		<div class="nav-wrapper">
@@ -140,11 +139,11 @@
 			<a href="#" class="brand-logo">Nearby</a>
 			<a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="#" class="waves-effect waves-light">How does it work?</a></li>
+				<li><a href="how-does-it-work" class="waves-effect waves-light">How does it work?</a></li>
 				<li><a href="#login-modal" class="waves-effect waves-light  modal-trigger">Log In</a></li>
 			</ul>
 			<ul class="side-nav right" id="mobile-nav">
-				<li><a href="#">How does it work?</a></li>
+				<li><a href="how-does-it-work">How does it work?</a></li>
 				<li><a href="#login-modal" class="modal-trigger">Log In</a></li>
 			</ul>
 		</div>
@@ -155,29 +154,31 @@
 		<div id="login-modal" class="modal col s10 offset-s1 m6 offset-m3 l4 offset-l4">
 			<div class="modal-content">
 				<form class="login-form">
-					<div class="row">
-						<div class="input-field center modal-header">
+					<div class="row small">
+						<div class="input-field col s5 modal-header">
 							<img src="assets/nearby-icon-small.png" alt="nearby-icon" class="responsive-img valign">
-							<h5 class="center login-form-text">Log In</h5>
+						</div>
+						<div class="row small">
+							<h5 class="col s7 login-header">Log In</h5>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<i class="mdi-social-person-outline prefix"></i>
-							<input id="username" type="text">
-							<label for="username" class="center-align">Username</label>
+							<input type="text" id="email">
+							<label for="email" class="center-align">Email</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<i class="mdi-action-lock-outline prefix"></i>
-							<input id="password" type="password">
+							<input type="password" id="password">
 							<label for="password">Password</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12 remember">
-							<input type="checkbox" id="remember-me" />
+							<input type="checkbox"  id="remember-me">
 							<label for="remember-me">Remember me</label>
 						</div>
 					</div>
@@ -186,7 +187,16 @@
 							<a href="/" class="btn waves-effect orange waves-light col s12">Login</a>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
+						<div class="input-field login-helper-link col s6">
+							<fb:login-button class='z-depth-1 hoverable' data-size='xlarge' scope="public_profile,email" onlogin="checkLoginState();">
+							</fb:login-button>
+						</div>
+						<div class="input-field login-helper-link col s6">
+							<a href="/" class="btn red waves-effect waves-light col s12">Google</a>
+						</div>
+					</div>
+					<div class="row small">
 						<div class="input-field col s6">
 							<p class="login-helper-link medium-small">
 								<a href="#register-modal" class="modal-trigger modal-close">Register Now!</a>
@@ -208,53 +218,41 @@
 		<div id="register-modal" class="modal col s10 offset-s1 m6 offset-m3 l4 offset-l4 ">
 			<div class="modal-content">
 				<form class="login-form">
-					<div class="row">
-						<div class="input-field modal-header center">
+					<div class="row small">
+						<div class="input-field center">
 							<h5 class="center login-form-text modal-header">Register</h5>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<i class="mdi-social-person-outline prefix"></i>
-							<input id="username" type="text">
-							<label for="username" class="center-align">Username</label>
+							<input type="email" id="email">
+							<label for="email" class="center-align">Email</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<i class="mdi-action-lock-outline prefix"></i>
-							<input id="password" type="password">
+							<input type="password" id="password">
 							<label for="password">Password</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<i class="mdi-action-lock-outline prefix"></i>
-							<input id="password_comfirm" type="password">
-							<label for="password">Confirm Password</label>
+							<input type="password" id="password_comfirm">
+							<label for="password_comfirm">Confirm Password</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row small">
 						<div class="input-field col s12">
 							<a href="/" class="btn waves-effect orange waves-light col s12">Register</a>
 						</div>
 					</div>
-					<div class="row">
-						<p class="input-field col s12">Or register with:</p>
-					</div>
-					<div class="row">
-						<div class="input-field login-helper-link col s6">
-							<fb:login-button class='z-depth-1 hoverable' data-size='xlarge' scope="public_profile,email" onlogin="checkLoginState();">
-							</fb:login-button>
-						</div>
-						<div class="input-field login-helper-link col s6">
-							<a href="/" class="btn red waves-effect waves-light col s12">Google</a>
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s6 m6 l6">
+					<div class="row small">
+						<div class="input-field col s12">
 							<p class="login-helper-link margin medium-small">
-								<a href="#login-modal" class="modal-trigger modal-close">Login Now!</a>
+								<a href="#login-modal" class="modal-trigger modal-close">Already Registered? Log In!</a>
 							</p>
 						</div>
 					</div>
@@ -286,13 +284,6 @@
 					<a class="btn-floating btn-medium waves-effect waves-light blue search-button"><i class="material-icons">search</i></a>
 				</div>
 			</div>
-
-			<!-- <div class="row">
-				<div class="col s2 offset-s10">
-					<a href="#">More Options...</a>
-				</div>
-			</div> -->
-
 		</form>
 	</div>
 

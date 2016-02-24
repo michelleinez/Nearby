@@ -11,23 +11,23 @@ class Main extends CI_Controller {
 	public function index(){
 		$this->load->view('main');
 	}
-	
+
+	public function how_does_it_work(){
+		$this->load->view('how-does-it-work');
+	}
+
 	public function facebook_login(){
 		$user = array(
 				'first_name' => $this->input->post('first_name'),
 				'last_name' => $this->input->post('last_name'),
 				'clientID' => $this->input->post('clientID'),
 				'accessToken' => $this->input->post('accessToken'),
-				'email' => $this->input->post('email')
+				'email' => $this->input->post('email'),
+				'logged_in' => TRUE
 		);
-		$add_user = $this->login->add_facebook_user($user);
 		$this->session->set_userdata($user);
-	}
-
-
-
-	public function how_does_it_work(){
-		$this->load->view('how-does-it-work');
+		//redefine $user to what we want in our DB
+		$this->login->add_facebook_user($user);
 	}
 
 }

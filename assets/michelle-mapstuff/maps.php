@@ -9,10 +9,6 @@
   <body>
     <form id="searchform1">
       <input type="text" id="searchbox1" />
-      <input type="submit" />
-    </form>
-
-    <form id="searchform2">
       <input type="text" id="searchbox2" />
       <input type="submit" />
     </form>

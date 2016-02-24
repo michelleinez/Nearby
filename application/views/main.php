@@ -57,11 +57,11 @@
 			<div class="modal-content">
 				<form class="login-form">
 					<div class="row small">
-						<div class="input-field col s5 modal-header">
-							<img src="assets/nearby-icon-small.png" alt="nearby-icon" class="responsive-img valign">
+						<div class="input-field col s4 header-icon">
+							<img src="assets/nearby-icon-90x90.png" alt="nearby-icon" class="responsive-img valign">
 						</div>
 						<div class="row small">
-							<h5 class="col s7 login-header">Log In</h5>
+							<h5 class="col s4 center login-header">Log In</h5>
 						</div>
 					</div>
 					<div class="row small">
@@ -79,7 +79,7 @@
 						</div>
 					</div>
 					<div class="row small">
-						<div class="input-field col s12 remember">
+						<div class="input-field col s12 remember-check">
 							<input type="checkbox"  id="remember-me">
 							<label for="remember-me">Remember me</label>
 						</div>
@@ -98,12 +98,12 @@
 						</div>
 					</div>
 					<div class="row small">
-						<div class="input-field col s6">
+						<div class="input-field col s4">
 							<p class="login-helper-link medium-small">
-								<a href="#register-modal" class="modal-trigger modal-close">Register Now!</a>
+								<a href="#register-modal" class="modal-trigger modal-close">Register!</a>
 							</p>
 						</div>
-						<div class="input-field col s6">
+						<div class="input-field col s8">
 							<p class="login-helper-link right-align medium-small">
 								<a href="#">Forgot password?</a>
 							</p>

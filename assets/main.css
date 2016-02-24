@@ -25,16 +25,22 @@
 	margin-top: 2px;
 	margin-right: 25px;
 }
-.small {
-	margin-bottom: 0px;
-	padding-bottom: 0px;
+
+/* ============= log in modal =============== */
+.header-icon {
+	padding-right: 0px !important;
 }
 
-.modal-header, .remember, .login-helper-link {
+.header-icon, .remember-check, .login-helper-link {
 	margin-top: 0px !important;
 }
 
 .login-header {
-	margin-top: 2.6rem;
-	padding-left: 0px !important;
+	margin-top: 2.6rem !important;
+	min-width: 85px;
+}
+
+.small {				/* rows */
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }

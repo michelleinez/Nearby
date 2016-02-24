@@ -36,6 +36,10 @@
 		</div>
 	</nav>
 
+	<div class="row">
+		<h4 class='col s12 center'>How does it work?</h4>
+	</div>
+
 
 </body>
 </html>

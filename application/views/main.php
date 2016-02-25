@@ -8,8 +8,8 @@
 <body>
 	<nav>
 		<div class="nav-wrapper">
-			<img src="assets/nearby-icon-large.png" class='nearby-icon'>
-			<a href="#" class="brand-logo">Nearby</a>
+			<img src="assets/nearby-icon-large-virt.png" class='nearby-icon'>
+			<a class="brand-logo">Nearby</a>
 			<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="how-does-it-work" class="waves-effect waves-light">How does it work?</a></li>
@@ -39,19 +39,19 @@
 	<div class="row">
 		<form class="col s12">
 			<div class="row">
-				<div class='col l1 offset-l1'>
+				<div class='col l1 offset-l1 center'>
 					<label class="search-label">Find a</label>
 				</div>
 				<div class="input-field col l3">
 					<input placeholder="movie theater" name="place_1" type="text" class="validate search-text">
 				</div>
-				<div class='col l1'>
+				<div class='col l1 center'>
 					<label class="search-label">with</label>
 				</div>
 				<div class="input-field col l3">
 					<input placeholder="ice cream" name="place_2" type="text" class="validate search-text">
 				</div>
-				<div class='col l1'>
+				<div class='col l1 center'>
 					<label class="search-label">nearby!</label>
 				</div>
 				<div class='col l1'>

@@ -8,8 +8,8 @@
 <body>
 	<nav>
 		<div class="nav-wrapper">
-			<img src="assets/nearby-icon-large.png" class='nearby-icon'>
-			<a href="#" class="brand-logo">Nearby</a>
+			<img src="assets/nearby-icon-large-virt.png" class='nearby-icon'>
+			<a href="/" class="brand-logo">Nearby</a>
 			<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="/" class="waves-effect waves-light">Home</a></li>

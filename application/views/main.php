@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<title>Nearby</title>
 	<link rel="stylesheet" type="text/css" href="/assets/css/map.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<?php $this->load->view('/partials/header'); ?>
 </head>
 <body>

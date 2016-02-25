@@ -1,7 +1,10 @@
 var map;
 var infowindow;
-var search_terms;
 
+var validated_results = [];
+var validated_clusters = [];
+var search_terms = "coffee";
+var search_terms2 = "groceries";
 
 $("#searchform1").submit(function(event){
   event.preventDefault();
@@ -9,6 +12,13 @@ $("#searchform1").submit(function(event){
   search_terms = $('#searchbox1').val();
   search_terms2 = $('#searchbox2').val();
   initMap();
+});
+
+$(".results1").click(function(event){
+  // console.log("validated_results: "+validated_results.length);
+  // console.log(validated_results);
+  // console.log("validated_clusters: "+validated_clusters.length);
+  // console.log(validated_clusters);
 });
 
 function initMap() {
@@ -24,6 +34,61 @@ function initMap() {
 
   //window layer on top of map for tooltips
   infowindow = new google.maps.InfoWindow();
+  var pos = {};
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      // console.log("pos: ");
+      // console.log(pos);
+
+      infowindow.setPosition(pos);
+      infowindow.setContent('Location found.');
+      map.setCenter(pos);
+
+      // create a marker for the user's Location
+      console.log('here');
+      console.log("pos pos: ");
+      console.log(pos);
+      var user = {
+        geometry: {
+          location: pos
+        }
+      };
+      createMarker(user, 'green');
+
+    }, function() {
+      handleLocationError(true, infowindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infowindow, map.getCenter());
+    //ask for current location if geolocation isn't working
+  }
+
+  //create a marker for the user's Location
+  // console.log("pos pos: ");
+  // console.log(pos);
+  // var user = {
+  //   geometry: {
+  //     location: pos
+  //   }
+  // };
+  // createMarker(user, 'green');
+
+
+
+
+  // console.log("pos pos: ");
+  // console.log(pos);
+  //
+  // console.log("user:");
+  // console.log(user);
 
   //the first search request gets sent here
   var service = new google.maps.places.PlacesService(map);
@@ -42,21 +107,21 @@ function initMap() {
   function make_results_markers(results, status) {
 
     if (status === google.maps.places.PlacesServiceStatus.OK) {
-      var validated_results = [];
       //for each result from the search create a marker
       for (var i = 0; i < results.length; i++) {
         rating = results[i].rating;
-        if(rating < 2){
+        if(rating > 2){
           //for the future: add in checks for
           //maximum distance between two places
-
           validated_results.push(results[i]);
-          console.log(validated_results);
         }
-        createMarker(results[i], 'red');
-        rating = results[i].rating;
-        latitude = results[i].geometry.location.lat();
-        longitude = results[i].geometry.location.lng();
+      }
+      for (var i = 0; i < validated_results.length; i++){
+
+        createMarker(validated_results[i], 'red');
+        rating = validated_results[i].rating;
+        latitude = validated_results[i].geometry.location.lat();
+        longitude = validated_results[i].geometry.location.lng();
 
         service.nearbySearch({
           //location = where to search near
@@ -71,23 +136,28 @@ function initMap() {
     }
   }
 
-  function make_cluster_markers(validated_results, status) {
+  function make_cluster_markers(clusters, status) {
 
     if (status === google.maps.places.PlacesServiceStatus.OK) {
 
       //for each result from the search create a marker
-      for (var i = 0; i < validated_results.length; i++) {
-        createMarker(validated_results[i], 'blue');
+      for (var i = 0; i < clusters.length; i++) {
+        if(rating > 2){
+          //for the future: add in checks for
+          //maximum distance between two places
+          validated_clusters.push(clusters[i]);
+        }
         // console.log(results[i]);
         // console.log(results[i].name);
         // console.log(results[i].geometry.location.lat());
         // console.log(results[i].geometry.location.lng());
       }
+
+      for (var i = 0; i < validated_clusters.length; i++){
+        createMarker(clusters[i], 'blue');
+      }
     }
   }
-
-
-
 }
 
 
@@ -95,6 +165,9 @@ function initMap() {
 
 
 function createMarker(place, color) {
+  console.log("made it to createMarker");
+  console.log(place);
+  console.log(color);
   //takes location from result object and creates a marker/displays it on map
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
@@ -108,4 +181,14 @@ function createMarker(place, color) {
     infowindow.setContent(place.name);
     infowindow.open(map, this);
   });
+}
+
+
+
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
 }

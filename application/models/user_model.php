@@ -5,27 +5,27 @@ class user_model extends CI_model {
 
     public function __construct(){
       parent::__construct();
-      $this->load->library('form-validation');
     }
 
-	public function add_facebook_user($post){
-		$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
-
-		if($this->form_validation->run()){
-			$query = "INSERT INTO users (email, password, created_at, updated_at, clientID, accessToken)
-			VALUES (?,?,?,?,?,?)";
-			$values = array($post['email'],0,date("Y-m-d, H:i:s"),date("Y-m-d, H:i:s"),$post['clientID'],$post['accessToken']);
-			return $this->db->query($query, $values);
-		} else {
-			$user = $this->users->get_by_email($post['email']);
-			$post['id'] = $user['id'];
-			$this->users->update($post);
-		}
-	}
+	// public function add_facebook_user($post){
+	// 	$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
+	//
+	// 	if($this->form_validation->run()){
+	// 		$query = "INSERT INTO users (email, password, created_at, updated_at, clientID, accessToken)
+	// 		VALUES (?,?,?,?,?,?)";
+	// 		$values = array($post['email'],0,date("Y-m-d, H:i:s"),date("Y-m-d, H:i:s"),$post['clientID'],$post['accessToken']);
+	// 		$this->db->query($query, $values);
+	// 	} else {
+	// 		$user = $this->users->get_by_email($post['email']);
+	// 		$post['id'] = $user['id'];
+	// 		$this->users->update($post);
+	// 	}
+	// 	redirect('/');
+	// }
 
 	public function add_user($post){
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[users.email]');
-		$this->form_validation->set_rules('password', 'Password', 'required|trim|matches[pass_2]|min_length[8]');
+		$this->form_validation->set_rules('password', 'Password', 'required|trim|matches[password_confirm]|min_length[8]');
 		$this->form_validation->set_rules('password_confirm', 'Password Confirmation', 'required|trim');
 
 		if($this->form_validation->run()){
@@ -43,9 +43,8 @@ class user_model extends CI_model {
 	}
 
 	public function update($post){
-		$query = "UPDATE users SET email = ?, password = ?, updated_at = ?, clientID, accessToken = ? WHERE id = ?";
-		$values = array($post['email'],$post['password'],date("Y-m-d, H:i:s"),
-				$post['accessToken'],$post['clientID'],$post['id']);
+		$query = "UPDATE users SET updated_at = ?, clientID = ?, accessToken = ? WHERE id = ?";
+		$values = array(date("Y-m-d, H:i:s"),$post['clientID'],$post['accessToken'],$post['id']);
 		return $this->db->query($query, $values);
 	}
 

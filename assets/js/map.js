@@ -3,8 +3,8 @@ var infowindow;
 
 var validated_results = [];
 var validated_clusters = [];
-var search_terms = "coffee";
-var search_terms2 = "groceries";
+var search_terms = "movie theater";
+var search_terms2 = "ice cream";
 
 $("#searchform1").submit(function(event){
   event.preventDefault();

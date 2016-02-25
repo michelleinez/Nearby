@@ -1,38 +1,9 @@
-<!-- <link rel="stylesheet" type="text/css" href="../assets/css/normalize.css">
-<link rel="stylesheet" type="text/css" href="../assets/css/index.css"> -->
-
-<!-- jQuery  -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-<!-- Materialize - Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-<!-- Materialize - Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-<!-- Materialize - buttons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- main style sheet -->
-<link rel="stylesheet" type="text/css" href="assets/main.css">
-
-<!-- favicon -->
-<link rel="icon" href="favicon.ico" />
-
-<script>
-	$( document ).ready(function(){
-		// sideNav handeler
-		$(".button-collapse").sideNav();
-
-		// login and register modal handler
-		$('.modal-trigger').leanModal();
-	})
-</script>
 <!--
 	███████  █████   ██████ ███████ ██████   ██████   ██████  ██   ██
 	██      ██   ██ ██      ██      ██   ██ ██    ██ ██    ██ ██  ██
 	█████   ███████ ██      █████   ██████  ██    ██ ██    ██ █████
 	██      ██   ██ ██      ██      ██   ██ ██    ██ ██    ██ ██  ██
 	██      ██   ██  ██████ ███████ ██████   ██████   ██████  ██   ██	 			-->
-
 
 	<script> // Facebook login api
 	// This is called with the results from from FB.getLoginStatus().
@@ -55,7 +26,7 @@
 
 				$.ajax({
 					method: "POST",
-					url: '/main/facebook_login',
+					url: '/users/facebook_login',
 					data: {clientID: clientID, accessToken: accessToken, email: email, first_name: first_name, last_name: last_name},
 				});
 
@@ -129,38 +100,14 @@
 	}
 
 	</script>
-
 <!--
-	███    ██  █████  ██    ██       ██████   █████  ██████
-	████   ██ ██   ██ ██    ██       ██   ██ ██   ██ ██   ██
-	██ ██  ██ ███████ ██    ██ █████ ██████  ███████ ██████
-	██  ██ ██ ██   ██  ██  ██        ██   ██ ██   ██ ██   ██
-	██   ████ ██   ██   ████         ██████  ██   ██ ██   ██	 				-->
-
-<nav>
-	<div class="nav-wrapper">
-		<img src="assets/nearby-icon-large.png" class='nearby-icon'>
-		<a href="#" class="brand-logo">Nearby</a>
-		<a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
-		<ul class="right hide-on-med-and-down">
-			<li><a href="how-does-it-work" class="waves-effect waves-light">How does it work?</a></li>
-			<li><a href="#login-modal" class="waves-effect waves-light  modal-trigger">Log In</a></li>
-		</ul>
-		<ul class="side-nav right" id="mobile-nav">
-			<li><a href="how-does-it-work">How does it work?</a></li>
-			<li><a href="#login-modal" class="modal-trigger">Log In</a></li>
-		</ul>
-	</div>
-</nav>
-<!--
-
 			██       ██████   ██████  ██ ███    ██
 			██      ██    ██ ██       ██ ████   ██
 			██      ██    ██ ██   ███ ██ ██ ██  ██
 			██      ██    ██ ██    ██ ██ ██  ██ ██
 			███████  ██████   ██████  ██ ██   ████	 						-->
 
-<div class="row">
+<div class="row small">
 	<div id="login-modal" class="modal col s10 offset-s1 m6 offset-m3 l4 offset-l4">
 		<div class="modal-content">
 			<form class="login-form">
@@ -230,7 +177,7 @@
 	██   ██ ██      ██    ██ ██      ██    ██    ██      ██   ██
 	██   ██ ███████  ██████  ██ ███████    ██    ███████ ██   ██	 				-->
 
-<div class="row">
+<div class="row small">
 	<div id="register-modal" class="modal col s10 offset-s1 m6 offset-m3 l4 offset-l4 ">
 		<div class="modal-content">
 			<form class="login-form">

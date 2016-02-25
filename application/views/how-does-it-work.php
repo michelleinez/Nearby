@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/index.css">
-
-	<!-- jQuery  -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-	<!-- Materialize - Compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-
-	<!-- Materialize - Compiled and minified JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-
-	<!-- Materialize - buttons -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-	<!-- favicon -->
-	<link rel="icon" href="favicon.ico" />
-
-	<!-- main style sheet -->
-	<link rel="stylesheet" type="text/css" href="assets/main.css">
-
+	<meta charset="utf-8">
+	<title>Nearby - How does it work</title>
+	<?php $this->load->view('/partials/header'); ?>
 </head>
 <body>
-	<!--============================= nav-bar ===============================-->
 	<nav>
 		<div class="nav-wrapper">
-			<img src="assets/nearby-icon-large.png" class='nearby-icon'>
+			<img src="assets/nearby-icon-large-virt.png" class='nearby-icon'>
 			<a href="/" class="brand-logo">Nearby</a>
-			<ul class="right">
+			<a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
 				<li><a href="/" class="waves-effect waves-light">Home</a></li>
+				<?php if ($this->session->userdata('logged_in')){ ?>
+						<li><a href="log-out" class="waves-effect waves-light">Log Out</a></li>
+				<?php } else { ?>
+						<li><a href="#login-modal" class="waves-effect waves-light modal-trigger">Log In</a></li>
+				<?php } ?>
+			</ul>
+			<ul class="side-nav" id="mobile-nav">
+				<li><a href="/">Home</a></li>
+				<?php if ($this->session->userdata('logged_in')){ ?>
+						<li><a href="log-out">Log Out</a></li>
+				<?php } else { ?>
+						<li><a href="#login-modal" class="modal-trigger">Log In</a></li>
+				<?php } ?>
 			</ul>
 		</div>
 	</nav>
 
+	<?php
+		if (!$this->session->userdata('logged_in')){
+			$this->load->view('/partials/login_reg');
+	 	}
+	?>
+	<!--============================= body ==================================-->
 	<div class="row">
 		<h4 class='col s12 center'>How does it work?</h4>
 	</div>

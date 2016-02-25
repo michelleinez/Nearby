@@ -9,20 +9,10 @@ class Main extends CI_Controller {
 	}
 
 	public function index(){
-		if($this->session->userdata('logged_in')){
-			$this->load->view('/partials/loggedin_header');
-		} else {
-			$this->load->view('/partials/default_header');
-		}
 		$this->load->view('main');
 	}
 
 	public function how_does_it_work(){
-		if($this->session->userdata('logged_in')){
-			$this->load->view('/partials/loggedin_howto_header');
-		} else {
-			$this->load->view('/partials/default_howto_header');
-		}
 		$this->load->view('how-does-it-work');
 	}
 

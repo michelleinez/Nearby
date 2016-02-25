@@ -54,7 +54,7 @@ $autoload['packages'] = array();
 
 // make sure you load the database and session libraries automatically
 // was empty array();
-$autoload['libraries'] = array('database', 'session');
+$autoload['libraries'] = array('database', 'session', 'form_validation');
 
 
 /*

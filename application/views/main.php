@@ -37,26 +37,34 @@
 	 	}
 	?>
 	<!--============================= body ==================================-->
-	<div class="row">
+	<div class="row small">
 		<form class="col s12" id="searchform1">
 			<div class="row">
-				<div class='col l1 offset-l1 center'>
-					<label class="search-label">Find a</label>
+				<div class="col l4 offset-l1">
+					<div class='col s4 center'>
+						<label class="search-label">Find a</label>
+					</div>
+					<div class="input-field col s8">
+						<input id="searchbox1" placeholder="movie theater" type="text" class="search-text">
+					</div>
 				</div>
-				<div class="input-field col l3">
-					<input id="searchbox1" placeholder="movie theater" name="place_1" type="text" class="validate search-text">
+
+				<div class="col l4">
+					<div class='col s3 center'>
+						<label class="search-label">with</label>
+					</div>
+					<div class="input-field col s9">
+						<input id="searchbox2" placeholder="ice cream" type="text" class="search-text">
+					</div>
 				</div>
-				<div class='col l1 center'>
-					<label class="search-label">with</label>
-				</div>
-				<div class="input-field col l3">
-					<input id="searchbox2" placeholder="ice cream" name="place_2" type="text" class="validate search-text">
-				</div>
-				<div class='col l1 center'>
-					<label class="search-label">nearby!</label>
-				</div>
-				<div class='col l1'>
-					<button type = 'submit' id="search-button" class="btn-floating btn-medium waves-effect waves-light blue search-button"><i class="material-icons">search</i></button>
+
+				<div class="col l3">
+					<div class='col s'>
+						<label class="search-label">nearby!</label>
+					</div>
+					<div class='col s2'>
+						<button type = 'submit' id="search-button" class="btn-floating btn-medium waves-effect waves-light blue search-button"><i class="material-icons">search</i></button>
+					</div>
 				</div>
 			</div>
 		</form>

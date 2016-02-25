@@ -25,11 +25,13 @@ function statusChangeCallback(response) {
 			var first_name = response.first_name;
 			var last_name = response.last_name;
 
+
 			$.ajax({
 				method: "POST",
 				url: '/main/facebook_login', // <===================================== PORTING
-				data: {clientID: clientID, accessToken: accessToken, email: email, first_name: first_name, last_name: last_name},
+				data: {clientID: clientID, accessToken: accessToken, email: email, first_name: first_name, last_name: last_name}
 			});
+
 
 		})
 	} else if (response.status === 'not_authorized') {
@@ -139,8 +141,8 @@ function testAPI() {
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12">
-						<input type="submit" class="btn waves-effect orange waves-light col s12" value="Login">
+					<div class="input-field col s12 waves-effect waves-light">
+						<input type="submit" class="btn orange col s12" value="Login">
 					</div>
 				</div>
 				<div class="row small">
@@ -207,8 +209,8 @@ function testAPI() {
 					</div>
 				</div>
 				<div class="row small">
-					<div class="input-field col s12">
-						<input type="submit" class="btn waves-effect orange waves-light col s12" value="Register">
+					<div class="input-field col s12 waves-effect waves-light">
+						<input type="submit" class="btn orange col s12" value="Register">
 					</div>
 				</div>
 				<div class="row small">

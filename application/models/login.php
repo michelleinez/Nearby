@@ -10,7 +10,6 @@ class login extends CI_model {
     // }
     public function add_facebook_user($user)
     {
-        //if email exists,
         // return FALSE
         // else
         $query = "INSERT INTO users (first_name, last_name, email, created_at, updated_at, clientID, accessToken) VALUES (?, ?, ?, NOW(), NOW(), ?, ?)";

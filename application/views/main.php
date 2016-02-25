@@ -10,7 +10,7 @@
 		<div class="nav-wrapper">
 			<img src="assets/nearby-icon-large-virt.png" class='nearby-icon'>
 			<a class="brand-logo">Nearby</a>
-			<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+			<a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="how-does-it-work" class="waves-effect waves-light">How does it work?</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
@@ -19,7 +19,7 @@
 						<li><a href="#login-modal" class="waves-effect waves-light modal-trigger">Log In</a></li>
 				<?php } ?>
 			</ul>
-			<ul class="side-nav right" id="mobile-nav">
+			<ul class="side-nav" id="mobile-nav">
 				<li><a href="how-does-it-work">How does it work?</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
 						<li><a href="log-out">Log Out</a></li>

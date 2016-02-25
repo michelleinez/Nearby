@@ -17,8 +17,9 @@ class user_model extends CI_model {
 	// 		$this->db->query($query, $values);
 	// 	} else {
 	// 		$user = $this->users->get_by_email($post['email']);
-	// 		$post['id'] = $user['id'];
-	// 		$this->users->update($post);
+	// 		$query = "UPDATE users SET updated_at = ?, clientID = ?, accessToken = ? WHERE id = ?";
+	// 		$values = array(date("Y-m-d, H:i:s"),$post['clientID'],$post['accessToken'],$user['id']);
+	// 		return $this->db->query($query, $values);
 	// 	}
 	// 	redirect('/');
 	// }
@@ -29,9 +30,10 @@ class user_model extends CI_model {
 		$this->form_validation->set_rules('password_confirm', 'Password Confirmation', 'required|trim');
 
 		if($this->form_validation->run()){
-			$query = "INSERT INTO users (email, password, created_at, updated_at, clientID, accessToken)
-					VALUES (?,?,?,?,?,?)";
-			$values = array($post['email'],md5($post['password']),date("Y-m-d, H:i:s"),date("Y-m-d, H:i:s"),0,0);
+			// $query = "INSERT INTO users (email, password, created_at, updated_at, clientID, accessToken) VALUES (?,?,?,?,?,?)";
+			// $values = array($post['email'],md5($post['password']),date("Y-m-d, H:i:s"),date("Y-m-d, H:i:s"),0,0);
+			$query = "INSERT INTO users (email, password, created_at, updated_at) VALUES (?,?,?,?)";
+			$values = array($post['email'],md5($post['password']),date("Y-m-d, H:i:s"),date("Y-m-d, H:i:s"));
 			return $this->db->query($query, $values);
 		}
 		return false;
@@ -42,11 +44,6 @@ class user_model extends CI_model {
 		return $this->db->query($query, $email)->row_array();
 	}
 
-	public function update($post){
-		$query = "UPDATE users SET updated_at = ?, clientID = ?, accessToken = ? WHERE id = ?";
-		$values = array(date("Y-m-d, H:i:s"),$post['clientID'],$post['accessToken'],$post['id']);
-		return $this->db->query($query, $values);
-	}
 
 	public function delete($user_id){
 		$query = "DELETE FROM users WHERE id = ?";

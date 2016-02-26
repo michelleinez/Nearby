@@ -193,6 +193,14 @@ function createMarker(place, color) {
 
     var popover_content = "";
     popover_content += "<h6>" + place.name + "</h6>";
+    if(place.opening_hours != undefined){
+      if(place.opening_hours.open_now){
+        popover_content += "<span style='color:green; float:right;'>Open Now!</span>";
+      }else{
+        popover_content += "<span style='color:red; float:right;'>Closed</span>";
+      }
+    }
+
     if (place.rating != undefined){
       for(i=1; i<=5; i++){
         if(place.rating > i - 1 && place.rating < i){
@@ -207,9 +215,18 @@ function createMarker(place, color) {
     } else {
       popover_content += "<em>No ratings to show.</em>"
     }
+
+    lat = place.geometry.location.lat();
+    lng = place.geometry.location.lng();
+    console.log(place);
+
     popover_content += "<br />";
     popover_content += "<strong>Address: </strong>" + place.vicinity;
     popover_content += "<br />";
+    popover_content += "<div id='directions' lat='"+ lat +"' lng='"+ lng +"'>";
+    popover_content += "<i class='fa fa-car fa-lg'></i>";
+    popover_content += " <a href='https://www.google.com/maps/dir/"+user_position.lat+","+user_position.lng+"/"+lat+", "+lng+"/' target='_blank'>Directions</a>";
+    popover_content += "</div>";
 
     infowindow.setContent(popover_content);
     infowindow.open(map, this);

@@ -15,7 +15,7 @@
 			<ul class="right hide-on-med-and-down">
 				<li><a href="how-does-it-work" class="waves-effect waves-light">How does it work?</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
-						<li><a href="log-out" class="waves-effect waves-light">Log Out</a></li>
+						<li><a href="log-out" onclick='signOut();' class="waves-effect waves-light">Log Out</a></li>
 				<?php } else { ?>
 						<li><a href="#login-modal" class="waves-effect waves-light modal-trigger">Log In</a></li>
 				<?php } ?>
@@ -41,10 +41,13 @@
 		<form class="col s12" id="searchform1">
 			<div class="row">
 				<div class="col l4 offset-l1">
-					<div class='col s4 center'>
+					<div class='col s4'>
 						<label class="search-label">Find a</label>
 					</div>
-					<div class="input-field col s8">
+					<div class="col s1">
+						<img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" />
+					</div>
+					<div class="input-field col s7">
 						<input id="searchbox1" placeholder="movie theater" type="text" class="search-text">
 					</div>
 				</div>
@@ -53,7 +56,10 @@
 					<div class='col s3 center'>
 						<label class="search-label">with</label>
 					</div>
-					<div class="input-field col s9">
+					<div class="col s1">
+						<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" />
+					</div>
+					<div class="input-field col s8">
 						<input id="searchbox2" placeholder="ice cream" type="text" class="search-text">
 					</div>
 				</div>

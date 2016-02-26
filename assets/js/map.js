@@ -3,6 +3,7 @@ var infowindow;
 
 var validated_results = [];
 var validated_clusters = [];
+var result_indices_with_clusters = [];
 var search_terms = "";
 var search_terms2 = "";
 
@@ -55,6 +56,7 @@ function got_position(user_position){
 function init_search(search_terms){
   validated_results = [];
   validated_clusters = [];
+  result_indices_with_clusters = [];
   initMap();
   //the first search request gets sent here
   var service = new google.maps.places.PlacesService(map);
@@ -86,13 +88,9 @@ function validate_first_results(results, status) {
 
     for (var i = 0; i < validated_results.length; i++){
 
-      createMarker(validated_results[i], 'red');
       rating = validated_results[i].rating;
       latitude = validated_results[i].geometry.location.lat();
       longitude = validated_results[i].geometry.location.lng();
-      var coords = { lat: latitude,
-        lng: longitude }
-      createCircle(coords);
 
       var service = new google.maps.places.PlacesService(map);
       service.nearbySearch({
@@ -119,8 +117,20 @@ function validate_clusters(i, clusters, status) {
         //for the future: add in checks for
         //maximum distance between two places
         validated_clusters.push(clusters[current_cluster]);
+        if($.inArray(i, result_indices_with_clusters) == -1){
+          result_indices_with_clusters.push(i);
+          createMarker(validated_results[i], 'red');
+          latitude = validated_results[i].geometry.location.lat();
+          longitude = validated_results[i].geometry.location.lng();
+          var coords = { lat: latitude,
+            lng: longitude }
+          createCircle(coords);
+
+        }
+
       }
     }
+    console.log("result!", result_indices_with_clusters);
     // console.log("validated_results");
     // console.log(validated_results);
     // console.log(validated_results.length);
@@ -206,14 +216,14 @@ function createMarker(place, color) {
 
 function createCircle(location){
   var circle = new google.maps.Circle({
-    strokeColor: '#6699ff',
+    strokeColor: '#FF8533',
     strokeOpacity: 0.2,
     strokeWeight: 2,
-    fillColor: '#6699ff',
+    fillColor: '#3C4AFF',
     fillOpacity: 0.1,
     map: map,
     center: location,
-    radius: search_radius
+    radius: search_radius+500
   });
 }
 

@@ -30,4 +30,14 @@ class Main extends CI_Controller {
 		$this->login->add_facebook_user($user);
 	}
 
+	public function g_user_login(){
+		$user = array(
+			'email' => $this->input->post('email'),
+			'token' => $this->input->post('token'),
+			'logged_in' => TRUE
+		);
+		$this->session->set_userdata($user);
+		$this->login->add_g_user($user);
+	}
+
 }

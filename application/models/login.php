@@ -18,4 +18,15 @@ class login extends CI_model {
         return $this->db->query($query, $values);
     }
 
+    public function add_g_user($user)
+    {
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[g_users.email]');
+
+        if($this->form_validation->run()){
+            $query = "INSERT INTO g_users (email, token) VALUES (?,?)";
+            $values = array($user['email'], $user['token']);
+            return $this->db->query($query, $values);
+        }
+    }
+
 }

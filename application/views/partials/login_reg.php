@@ -103,6 +103,49 @@ function testAPI() {
 }
 
 </script>
+<!--Google platform library-->
+<meta name="google-signin-client_id" content="879208934488-f34fhnmbapfb8g6v18jpa7fllg56rq5d.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+	function onSignIn(googleUser) {
+		var profile = googleUser.getBasicProfile();
+		console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		console.log('Name: ' + profile.getName());
+		console.log('Image URL: ' + profile.getImageUrl());
+		console.log('Email: ' + profile.getEmail());
+		var email = profile.getEmail();
+
+		function get_token(googleUser) {
+			var response = googleUser.getAuthResponse();
+			var token = response.id_token;
+			console.log(token);
+			console.log(email);
+			$.ajax({
+				method: "POST",
+				url: 'main/g_user_login',
+				data: {token: token, email: email}
+			});
+		}
+		get_token(googleUser);
+	}
+
+
+
+</script>
+
+<!--Google user sign out function-->
+<script>
+
+	function signOut() {
+	var auth2 = gapi.auth2.getAuthInstance();
+	auth2.signOut().then(function () {
+	  console.log('User signed out.');
+	});
+	}
+
+</script>
+</script>
+
 <!--
 			██       ██████   ██████  ██ ███    ██
 			██      ██    ██ ██       ██ ████   ██
@@ -150,7 +193,7 @@ function testAPI() {
 						<fb:login-button class='z-depth-1 hoverable' data-size='xlarge' scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 					</div>
 					<div class="input-field login-helper-link col s6">
-						<a href="/" class="btn red waves-effect waves-light col s12">Google</a>
+						<div class="g-signin2 hoverable" data-width="153" data-height="39" data-onsuccess="onSignIn"></div>
 					</div>
 				</div>
 				<div class="row small">

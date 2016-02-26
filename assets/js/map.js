@@ -222,7 +222,7 @@ function createMarker(place, color) {
 
     lat = place.geometry.location.lat();
     lng = place.geometry.location.lng();
-    console.log(place);
+    // console.log(place);
 
     popover_content += "<br />";
     popover_content += "<strong>Address: </strong>" + place.vicinity;

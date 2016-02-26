@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>Nearby</title>
-	<link rel="stylesheet" type="text/css" href="/assets/css/map.css" />
 	<?php $this->load->view('/partials/header'); ?>
 </head>
 <body>

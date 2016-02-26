@@ -11,6 +11,9 @@
 <!-- Materialize - buttons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<!-- FontAwesome -->
+<link href="/assets/libraries/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
 <!-- main style sheet -->
 <link rel="stylesheet" type="text/css" href="assets/main.css">
 

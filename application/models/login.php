@@ -27,6 +27,8 @@ class login extends CI_model {
             $values = array($user['email'], $user['token']);
             return $this->db->query($query, $values);
         }
+        $this->session->userdata('g_errors', TRUE);
+        return false;
     }
 
 }

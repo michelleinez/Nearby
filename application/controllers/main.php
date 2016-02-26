@@ -5,7 +5,8 @@ class Main extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//$this->output->enable_profiler();
-		$this->load->model('login');
+		// $this->load->model('login');
+		$this->load->model('user_model');
 	}
 
 	public function index(){
@@ -27,7 +28,7 @@ class Main extends CI_Controller {
 		);
 		$this->session->set_userdata($user);
 		//redefine $user to what we want in our DB
-		$this->login->add_facebook_user($user);
+		$this->user_model->add_facebook_user($user);
 	}
 
 	public function g_user_login(){
@@ -37,7 +38,7 @@ class Main extends CI_Controller {
 			'logged_in' => TRUE
 		);
 		$this->session->set_userdata($user);
-		$this->login->add_g_user($user);
+		$this->user_model->add_g_user($user);
 	}
 
 }

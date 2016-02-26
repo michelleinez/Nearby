@@ -6,6 +6,8 @@ var validated_clusters = [];
 var result_indices_with_clusters = [];
 var search_terms = "";
 var search_terms2 = "";
+var circleClickHandler;
+var user_position;
 
 // options
 var center = {lat: 37.377, lng: -121.914};
@@ -17,33 +19,32 @@ $("#searchform1").submit(function(event){
   event.preventDefault();
   search_terms = $('#searchbox1').val();
   search_terms2 = $('#searchbox2').val();
-  init_search(search_terms);
+  if(search_terms != '' && search_terms2 != ''){
+    init_search(search_terms);
+  }
 });
 
 
 function initMap() {
-  //user's location (center of map when map is initialized)
-  //I placed it at the coding dojo by default...
-
   //create a new map and set zoom level
   map = new google.maps.Map(document.getElementById('map'), {
-    center: get_geolocation_of_user(),
+    center: center,
     zoom: map_zoom_level
   });
+
 
   //window layer on top of map for tooltips
   infowindow = new google.maps.InfoWindow();
   var pos = {};
 
-  add_user_location_marker();
+  get_geolocation_of_user();
 }
 
-
-function add_user_location_marker(){
-  result = get_geolocation_of_user();
+function set_user_position(location){
+  user_position = location;
 }
 
-function got_position(user_position){
+function add_user_marker(user_position){
 
   var marker = new google.maps.Marker({
     map: map,
@@ -125,19 +126,18 @@ function validate_clusters(i, clusters, status) {
           var coords = { lat: latitude,
             lng: longitude }
           createCircle(coords);
-
         }
 
       }
     }
-    console.log("result!", result_indices_with_clusters);
+    // console.log("result!", result_indices_with_clusters);
     // console.log("validated_results");
     // console.log(validated_results);
     // console.log(validated_results.length);
     // console.log("validated_clusters");
     // console.log(validated_clusters);
     // console.log(validated_clusters.length);
-    console.log(validated_results.length, " validated_results: ", validated_results);
+    // console.log(validated_results.length, " validated_results: ", validated_results);
     for (var i = 0; i < validated_clusters.length; i++){
       createMarker(validated_clusters[i], 'blue');
       latitude = validated_clusters[i].geometry.location.lat();
@@ -151,7 +151,6 @@ function validate_clusters(i, clusters, status) {
 
 function get_geolocation_of_user(){
   var pos;
-
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -164,7 +163,9 @@ function get_geolocation_of_user(){
       infowindow.setPosition(pos);
       infowindow.setContent('Location found.');
       map.setCenter(pos);
-      got_position(pos);
+
+      add_user_marker(pos);
+      set_user_position(pos);
 
     }, function() {
       handleLocationError(true, infowindow, map.getCenter());
@@ -225,7 +226,27 @@ function createCircle(location){
     center: location,
     radius: search_radius+500
   });
+  //initialize Google Directions
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  directionsDisplay.setMap(map);
+
+  google.maps.event.addListener(circle, 'click', function() {
+    directionsService.route({
+      origin: user_position,
+      destination: location,
+      travelMode: google.maps.TravelMode.DRIVING
+    }, function(response, status) {
+      if (status === google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+  });
 }
+
+
 
 
 

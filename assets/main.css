@@ -1,23 +1,7 @@
+/*================== nav bar ===================*/
 .nav-wrapper {
 	background: #ff8533;
 	padding: 0px 25px;
-}
-
-.search-label {
-	position: relative;
-	font-size: 1.8rem;
-	top: 1.25rem;
-	color: black;
-}
-
-.search-text {
-	font-size: 1.8rem !important;
-}
-
-.search-button {
-	position: relative;
-	top: 1.1rem;
-	left: 1.1rem;
 }
 
 .nearby-icon {
@@ -26,7 +10,7 @@
 	margin-right: 25px;
 }
 
-/* ============= log in modal =============== */
+/* ================== Modals ===================== */
 .header-icon {
 	padding-right: 0px !important;
 }
@@ -40,11 +24,47 @@
 	min-width: 85px;
 }
 
-.small {				/* rows */
+.small {
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 }
 
+/*==================== search form ===================*/
 #searchform1{
 	padding-top: 0.5rem;
+}
+
+.search-label {
+	position: relative;
+	font-size: 1.8rem;
+	top: 1.25rem;
+	color: black;
+}
+
+.search-text {
+	font-size: 1.8rem !important;
+}
+
+.search_marker {
+	position: relative;
+	top: 1.4rem;
+	right: .5rem;
+}
+
+.search-label:first-of-type {
+	text-align: right;
+}
+
+.search-button {
+	position: relative;
+	top: 1.1rem;
+	left: 1.1rem;
+}
+
+.no_padding {
+	padding: 0px !important;
+}
+
+.align-right {
+	text-align: right;
 }

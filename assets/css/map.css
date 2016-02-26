@@ -4,6 +4,6 @@ html, body {
   padding: 0;
 }
 #map {
-  height: 400px;
+  height: 465px !important;
   width: 100%;
 }

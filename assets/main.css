@@ -53,6 +53,7 @@
 
 .search-label:first-of-type {
 	text-align: right;
+	white-space: nowrap;
 }
 
 .search-button {
@@ -72,9 +73,8 @@
 /*================== footer =================*/
 .page-footer{
 	background: #ff8533 !important;
-	height: 75px;
 	margin-top: 0px !important;
-	padding-top: 15px !important;
+	padding-top: 1px !important;
 }
 
 .footer-copyright {

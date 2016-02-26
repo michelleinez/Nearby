@@ -15,7 +15,7 @@
 			<ul class="right hide-on-med-and-down">
 				<li><a href="how-does-it-work" class="waves-effect waves-light">How does it work?</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
-						<li><a href="log-out" class="waves-effect waves-light">Log Out</a></li>
+						<li><a href="log-out" onclick='signOut();' class="waves-effect waves-light">Log Out</a></li>
 				<?php } else { ?>
 						<li><a href="#login-modal" class="waves-effect waves-light modal-trigger">Log In</a></li>
 				<?php } ?>

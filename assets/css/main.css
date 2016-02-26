@@ -99,3 +99,13 @@
 .page-footer .container {
 	margin-left: 25px;
 }
+
+.caption {
+	padding: 0px 20px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+}
+
+.caption h4, .caption h5 {
+	color: black !important;
+}

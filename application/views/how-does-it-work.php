@@ -47,31 +47,34 @@
 
     <ul class="slides">
       <li>
-        <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
+      	<img src="http://fblog.futurebrand.com/wp-content/uploads/2014/12/Superma.jpg"> <!-- random image -->
+
+<!--         <img style="width:100vw; height:25vw" src="/assets/how_it_works_images/first_search_term.png"> <!-- random image --> <!-- <img src="funny-dog.jpg"> -->
+ -->
         <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3 style="color:black">Where do you want to go?</h3>
+          <h5 class="black-text text-lighten-3">Place that in the first search term.</h5>
         </div>
       </li>
       <li>
-        <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
+        <img src="http://www.fitnessbin.com/wp-content/uploads/2015/08/o-COFFEE-facebook.jpg"> <!-- random image -->
         <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3 style="color:black">What else do you want to do near the first place?  </h3>
+          <h5 class="black-text text-lighten-3">Place this in the second search term.</h5>
         </div>
       </li>
       <li>
-        <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
+        <img style="width:125vw; height:40vw" src="/assets/how_it_works_images/safeway_coffee_clusters.png"> <!-- random image -->
         <div class="caption right-align">
-          <h3>Right Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3 style="color:black">Click search and get the best results near you.</h3>
+          <h5 class="black-text text-lighten-3">Find ratings and directions.</h5>
         </div>
       </li>
       <li>
-        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+        <img src="http://images.wisegeek.com/woman-breathing-in.jpg"> <!-- random image -->
         <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3>Enjoy a more relaxing trip.</h3>
+          <h5 class="light grey-text text-lighten-3">Have your time back!</h5>
         </div>
       </li>
     </ul>

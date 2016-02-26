@@ -244,24 +244,6 @@ function createCircle(location){
     center: location,
     radius: search_radius+600
   });
-  //initialize Google Directions
-  var directionsService = new google.maps.DirectionsService;
-  var directionsDisplay = new google.maps.DirectionsRenderer;
-  directionsDisplay.setMap(map);
-
-  google.maps.event.addListener(circle, 'click', function() {
-    directionsService.route({
-      origin: user_position,
-      destination: location,
-      travelMode: google.maps.TravelMode.DRIVING
-    }, function(response, status) {
-      if (status === google.maps.DirectionsStatus.OK) {
-        directionsDisplay.setDirections(response);
-      } else {
-        window.alert('Directions request failed due to ' + status);
-      }
-    });
-  });
 }
 
 function create_user_Circle(location){

@@ -3,9 +3,14 @@ var infowindow;
 
 var validated_results = [];
 var validated_clusters = [];
-var search_terms = "movie theater";
-var search_terms2 = "ice cream";
+var search_terms = "";
+var search_terms2 = "";
+
+// options
 var center = {lat: 37.377, lng: -121.914};
+var search_radius = 1000;
+var distance_from_user = 5000;
+var map_zoom_level = 12;
 
 $("#searchform1").submit(function(event){
   event.preventDefault();
@@ -19,20 +24,37 @@ function initMap() {
   //user's location (center of map when map is initialized)
   //I placed it at the coding dojo by default...
 
-
   //create a new map and set zoom level
   map = new google.maps.Map(document.getElementById('map'), {
-    center: center,
-    zoom: 13
+    center: get_geolocation_of_user(),
+    zoom: map_zoom_level
   });
 
   //window layer on top of map for tooltips
   infowindow = new google.maps.InfoWindow();
   var pos = {};
-  add_geolocation_marker();
+
+  add_user_location_marker();
 }
 
+
+function add_user_location_marker(){
+  result = get_geolocation_of_user();
+}
+
+function got_position(user_position){
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: user_position
+  });
+  marker.setIcon('/assets/userdot.png');
+}
+
+
 function init_search(search_terms){
+  validated_results = [];
+  validated_clusters = [];
   initMap();
   //the first search request gets sent here
   var service = new google.maps.places.PlacesService(map);
@@ -40,7 +62,7 @@ function init_search(search_terms){
     //location = where to search near
     location: center,
     //how far from location to search for things
-    radius: 4000,
+    radius: distance_from_user,
     //keyword = search term taken from searchbox1
     keyword: search_terms
 
@@ -52,7 +74,6 @@ function init_search(search_terms){
 function validate_first_results(results, status) {
 
   if (status === google.maps.places.PlacesServiceStatus.OK) {
-    console.log(results);
     //for each result from the search create a marker
     for (var i = 0; i < results.length; i++) {
       rating = results[i].rating;
@@ -69,13 +90,16 @@ function validate_first_results(results, status) {
       rating = validated_results[i].rating;
       latitude = validated_results[i].geometry.location.lat();
       longitude = validated_results[i].geometry.location.lng();
+      var coords = { lat: latitude,
+        lng: longitude }
+      createCircle(coords);
 
       var service = new google.maps.places.PlacesService(map);
       service.nearbySearch({
         //location = where to search near
         location: {lat: latitude, lng: longitude},
         //how far from location to search for things
-        radius: 500,
+        radius: search_radius,
         //keyword = search term taken from searchbox1
         keyword: search_terms2
 
@@ -86,33 +110,28 @@ function validate_first_results(results, status) {
 }
 
 function validate_clusters(i, clusters, status) {
-  console.log("iii");
-  console.log(i);
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
 
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
     //for each result from the search create a marker
-    for (var i = 0; i < clusters.length; i++) {
-      var place = clusters[i];
+    for (var current_cluster = 0; current_cluster < clusters.length; current_cluster++) {
+      var place = clusters[current_cluster];
       if(rating > 2 && place.geometry.location){
         //for the future: add in checks for
         //maximum distance between two places
-        validated_clusters.push(clusters[i]);
+        validated_clusters.push(clusters[current_cluster]);
       }
     }
-    console.log("validated_results");
-    console.log(validated_results);
-    console.log(validated_results.length);
-    console.log("validated_clusters");
-    console.log(validated_clusters);
-    console.log(validated_clusters.length);
-
+    // console.log("validated_results");
+    // console.log(validated_results);
+    // console.log(validated_results.length);
+    // console.log("validated_clusters");
+    // console.log(validated_clusters);
+    // console.log(validated_clusters.length);
+    console.log(validated_results.length, " validated_results: ", validated_results);
     for (var i = 0; i < validated_clusters.length; i++){
       createMarker(validated_clusters[i], 'blue');
       latitude = validated_clusters[i].geometry.location.lat();
       longitude = validated_clusters[i].geometry.location.lng();
-      var coords = { lat: latitude,
-        lng: longitude }
-      createCircle(coords);
     }
   }
 }
@@ -120,10 +139,13 @@ function validate_clusters(i, clusters, status) {
 
 
 
-function add_geolocation_marker(){
+function get_geolocation_of_user(){
+  var pos;
+
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
+
       pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
@@ -132,14 +154,7 @@ function add_geolocation_marker(){
       infowindow.setPosition(pos);
       infowindow.setContent('Location found.');
       map.setCenter(pos);
-
-      // create a marker for the user's Location
-      var user = {
-        geometry: {
-          location: pos
-        }
-      };
-      createMarker(user, 'green');
+      got_position(pos);
 
     }, function() {
       handleLocationError(true, infowindow, map.getCenter());
@@ -149,6 +164,7 @@ function add_geolocation_marker(){
     handleLocationError(false, infowindow, map.getCenter());
     //ask for current location if geolocation isn't working
   }
+
 }
 
 function createMarker(place, color) {
@@ -162,7 +178,28 @@ function createMarker(place, color) {
 
 
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
+
+    var popover_content = "";
+    popover_content += "<h6>" + place.name + "</h6>";
+    if (place.rating != undefined){
+      for(i=1; i<=5; i++){
+        if(place.rating > i - 1 && place.rating < i){
+          starfill='star-half-o';
+        } else if (place.rating > i){
+          starfill='star';
+        } else if (place.rating < i){
+          starfill='star-o';
+        }
+      popover_content += "<i style='color:orange;' class='fa fa-"+starfill+" fa-lg'></i>";
+      }
+    } else {
+      popover_content += "<em>No ratings to show.</em>"
+    }
+    popover_content += "<br />";
+    popover_content += "<strong>Address: </strong>" + place.vicinity;
+    popover_content += "<br />";
+
+    infowindow.setContent(popover_content);
     infowindow.open(map, this);
   });
 }
@@ -176,7 +213,7 @@ function createCircle(location){
     fillOpacity: 0.1,
     map: map,
     center: location,
-    radius: 500
+    radius: search_radius
   });
 }
 

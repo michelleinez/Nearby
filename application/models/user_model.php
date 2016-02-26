@@ -7,22 +7,34 @@ class user_model extends CI_model {
       parent::__construct();
     }
 
-	// public function add_facebook_user($post){
-	// 	$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
-	//
-	// 	if($this->form_validation->run()){
-	// 		$query = "INSERT INTO users (email, password, created_at, updated_at, clientID, accessToken)
-	// 		VALUES (?,?,?,?,?,?)";
-	// 		$values = array($post['email'],0,date("Y-m-d, H:i:s"),date("Y-m-d, H:i:s"),$post['clientID'],$post['accessToken']);
-	// 		$this->db->query($query, $values);
-	// 	} else {
-	// 		$user = $this->users->get_by_email($post['email']);
-	// 		$query = "UPDATE users SET updated_at = ?, clientID = ?, accessToken = ? WHERE id = ?";
-	// 		$values = array(date("Y-m-d, H:i:s"),$post['clientID'],$post['accessToken'],$user['id']);
-	// 		return $this->db->query($query, $values);
-	// 	}
-	// 	redirect('/');
-	// }
+	public function add_facebook_user($post){
+		$this->form_validation->set_rules('email', 'Email', 'required|is_unique[fb_users.email]');
+
+		if($this->form_validation->run()){
+			$query = "INSERT INTO fb_users (email, created_at, updated_at, clientID, accessToken)
+			VALUES (?,?,?,?,?)";
+			$values = array($post['email'],date("Y-m-d, H:i:s"),date("Y-m-d, H:i:s"),$post['clientID'],$post['accessToken']);
+			$this->db->query($query, $values);
+		} else {
+			$user = $this->users->get_by_email($post['email']);
+			$query = "UPDATE users SET updated_at = ?, clientID = ?, accessToken = ? WHERE id = ?";
+			$values = array(date("Y-m-d, H:i:s"),$post['clientID'],$post['accessToken'],$user['id']);
+			return $this->db->query($query, $values);
+		}
+		redirect('/');
+	}
+
+    public function add_g_user($user){
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[g_users.email]');
+
+        if($this->form_validation->run()){
+            $query = "INSERT INTO g_users (email, token) VALUES (?,?)";
+            $values = array($user['email'], $user['token']);
+            return $this->db->query($query, $values);
+        }
+        $this->session->userdata('g_errors', TRUE);
+        return false;
+    }
 
 	public function add_user($post){
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[users.email]');

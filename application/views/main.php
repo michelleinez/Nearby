@@ -40,32 +40,32 @@
 	<div class="row small">
 		<form class="col s12" id="searchform1">
 			<div class="row">
-				<div class="col l4 offset-l1">
-					<div class='col s4'>
+				<div class="col l4 offset-l1 no_padding">
+					<div class='col l4 s3 align-right'>
 						<label class="search-label">Find a</label>
 					</div>
 					<div class="col s1">
-						<img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" />
+						<img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" class='search_marker'/>
 					</div>
-					<div class="input-field col s7">
+					<div class="input-field col l7 s8">
 						<input id="searchbox1" placeholder="movie theater" type="text" class="search-text">
 					</div>
 				</div>
 
-				<div class="col l4">
+				<div class="col l4 no_padding">
 					<div class='col s3 center'>
 						<label class="search-label">with</label>
 					</div>
 					<div class="col s1">
-						<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" />
+						<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" class='search_marker'/>
 					</div>
 					<div class="input-field col s8">
 						<input id="searchbox2" placeholder="ice cream" type="text" class="search-text">
 					</div>
 				</div>
 
-				<div class="col l3">
-					<div class='col s'>
+				<div class="col l2 no_padding">
+					<div class='col s7'>
 						<label class="search-label">nearby!</label>
 					</div>
 					<div class='col s2'>

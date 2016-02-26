@@ -50,6 +50,7 @@ function got_position(user_position){
     position: user_position
   });
   marker.setIcon('/assets/userdot.png');
+  create_user_Circle(user_position);
 }
 
 
@@ -217,16 +218,28 @@ function createMarker(place, color) {
 function createCircle(location){
   var circle = new google.maps.Circle({
     strokeColor: '#FF8533',
-    strokeOpacity: 0.2,
+    strokeOpacity: 0.4,
     strokeWeight: 2,
     fillColor: '#3C4AFF',
     fillOpacity: 0.1,
     map: map,
     center: location,
-    radius: search_radius+500
+    radius: search_radius+600
   });
 }
 
+function create_user_Circle(location){
+	var circle = new google.maps.Circle({
+      strokeColor: '#999999',
+      strokeOpacity: 0.3,
+      strokeWeight: 2,
+      fillColor: '#3C4AFF',
+      fillOpacity: 0.0,
+      map: map,
+      center: location,
+      radius: distance_from_user+2500
+    });
+}
 
 
 

@@ -8,7 +8,7 @@
 <body>
 	<nav>
 		<div class="nav-wrapper">
-			
+
 			<img src="assets/nearby-icon-large-virt.png" class='nearby-icon'>
 			<a href="/" class="brand-logo">Nearby</a>
 
@@ -45,5 +45,13 @@
 	</div>
 
 
+	<!--============================ footer =================================-->
+	<footer class="page-footer">
+		<div class="footer-copyright">
+			<div class="container">
+				© 2016 Copyright Team Kickass
+			</div>
+		</div>
+	</footer>
 </body>
 </html>

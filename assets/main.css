@@ -68,3 +68,19 @@
 .align-right {
 	text-align: right;
 }
+
+/*================== footer =================*/
+.page-footer{
+	background: #ff8533 !important;
+	height: 75px;
+	margin-top: 0px !important;
+	padding-top: 15px !important;
+}
+
+.footer-copyright {
+	background-color: #ff8533 !important;
+}
+
+.page-footer .container {
+	margin-left: 25px;
+}

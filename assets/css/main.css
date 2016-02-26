@@ -70,11 +70,26 @@
 	text-align: right;
 }
 
+/*================== slides =================*/
+.slides {
+	margin-bottom: 30px !important;
+}
+
+/*================== map =================*/
+#map {
+  height: 460px !important;
+  width: 100%;
+}
+
 /*================== footer =================*/
 .page-footer{
 	background: #ff8533 !important;
 	margin-top: 0px !important;
-	padding-top: 1px !important;
+	padding-top: 0px !important;
+
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
 }
 
 .footer-copyright {

@@ -18,7 +18,7 @@
 <link href="/assets/libraries/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 <!-- main style sheet -->
-<link rel="stylesheet" type="text/css" href="assets/main.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 
 <!-- favicon -->
 <link rel="icon" href="favicon.ico" />
@@ -30,5 +30,8 @@
 
 		// login and register modal handler
 		$('.modal-trigger').leanModal();
+
+		// slider
+		$('.slider').slider({full_width: true});
 	})
 </script>

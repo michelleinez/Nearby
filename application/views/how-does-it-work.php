@@ -8,9 +8,10 @@
 <body>
 	<nav>
 		<div class="nav-wrapper">
+			
 			<img src="assets/nearby-icon-large-virt.png" class='nearby-icon'>
 			<a href="/" class="brand-logo">Nearby</a>
-			<a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
+
 			<ul class="right hide-on-med-and-down">
 				<li><a href="/" class="waves-effect waves-light">Home</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
@@ -19,7 +20,9 @@
 						<li><a href="#login-modal" class="waves-effect waves-light modal-trigger">Log In</a></li>
 				<?php } ?>
 			</ul>
-			<ul class="side-nav" id="mobile-nav">
+
+			<a class='dropdown-button right hide-on-large-only' href='#' data-beloworigin='true' data-activates='dropdown'><i class="material-icons">menu</i></a>
+			<ul id='dropdown' class='dropdown-content'>
 				<li><a href="/">Home</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
 						<li><a href="log-out">Log Out</a></li>
@@ -27,6 +30,7 @@
 						<li><a href="#login-modal" class="modal-trigger">Log In</a></li>
 				<?php } ?>
 			</ul>
+
 		</div>
 	</nav>
 

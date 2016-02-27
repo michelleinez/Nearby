@@ -14,6 +14,7 @@
 
 			<ul class="right hide-on-med-and-down">
 				<li><a href="/" class="waves-effect waves-light">Home</a></li>
+				<li><a href="mailto:nearby.rocks@gmail.com?Subject=Feedback" target="_top" class="waves-effect waves-light">Give Feedback!</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
 						<li><a href="log-out" class="waves-effect waves-light">Log Out</a></li>
 				<?php } else { ?>
@@ -21,9 +22,10 @@
 				<?php } ?>
 			</ul>
 
-			<a class='dropdown-button right hide-on-large-only' href='#' data-beloworigin='true' data-activates='dropdown'><i class="material-icons">menu</i></a>
+			<a class='dropdown-button right hide-on-large-only' href='#' data-beloworigin='true' data-constrainwidth='false' data-activates='dropdown'><i class="material-icons">menu</i></a>
 			<ul id='dropdown' class='dropdown-content'>
 				<li><a href="/">Home</a></li>
+				<li><a href="mailto:nearby.rocks@gmail.com?Subject=Feedback" target="_top" class="waves-effect waves-light">Give Feedback!</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
 						<li><a href="log-out">Log Out</a></li>
 				<?php } else { ?>

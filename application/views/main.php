@@ -13,16 +13,19 @@
 
 			<ul class="right hide-on-med-and-down">
 				<li><a href="how-does-it-work" class="waves-effect waves-light">How does it work?</a></li>
+				<li><a href="mailto:nearby.rocks@gmail.com?Subject=Feedback" target="_top" class="waves-effect waves-light">Give Feedback!</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
 						<li><a href="log-out" onclick='signOut();' class="waves-effect waves-light">Log Out</a></li>
 				<?php } else { ?>
-						<li><a href="#login-modal" class="waves-effect waves-light modal-trigger">Log In</a></li>
+						<li>
+							<a href="#login-modal" class="waves-effect waves-light modal-trigger">Log In</a></li>
 				<?php } ?>
 			</ul>
 
-			<a class='dropdown-button right hide-on-large-only' href='#' data-beloworigin='true' data-activates='dropdown'><i class="material-icons">menu</i></a>
+			<a class='dropdown-button right hide-on-large-only' href='#' data-beloworigin='true' data-constrainwidth='false' data-activates='dropdown'><i class="material-icons">menu</i></a>
 			<ul id='dropdown' class='dropdown-content'>
 				<li><a href="how-does-it-work">How does it work?</a></li>
+				<li><a href="mailto:nearby.rocks@gmail.com?Subject=Feedback" target="_top" class="waves-effect waves-light">Give Feedback!</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
 						<li><a href="log-out">Log Out</a></li>
 				<?php } else { ?>

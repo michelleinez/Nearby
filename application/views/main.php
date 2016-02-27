@@ -40,7 +40,7 @@
 			$this->load->view('/partials/login_reg');
 	 	}
 	?>
-	<!--============================= body ==================================-->
+	<!--============================= Search ==================================-->
 	<div class="row small">
 		<form class="col s12" id="searchform1">
 			<div class="row">
@@ -78,9 +78,64 @@
 				</div>
 			</div>
 		</form>
+
+		<a href="#options" class="col s4 l2 offset-s8 offset-l10 modal-trigger"><i class="fa fa-cog"></i> Search Options</a>
 	</div>
 
-	<!-- temp image -  Map will go here -->
+	<!--============================= Options Modal =========================-->
+	<div class="row small">
+		<div id="options" class="modal">
+			<div class="modal-content">
+				<form action='register-form' method="post">
+					<div class="row small">
+						<div class="input-field center">
+							<h5 class="login-form-text center">Options</h5>
+						</div>
+					</div>
+					<div class="row small">
+						<div class="input-field col s6">
+							<i class="fa_down fa fa-location-arrow fa-lg prefix"></i>
+							<input type="text" id="location" name='location'>
+							<label for="location" class="center-align">Starting Location</label>
+						</div>
+						<div class="input-field col s6">
+							<p class="range-field">
+								<i class="fa fa-dot-circle-o fa-lg prefix"></i>
+								<input type="range" id="search_range" min="0 " max="100" />
+							</p>
+						</div>
+					</div>
+
+					<div class="row small">
+						<div class="input-field col s2 offset-s8 waves-effect waves-light">
+							<input type="submit" class="btn grey col s12" value="Cancel">
+						</div>
+						<div class="input-field col s2 waves-effect waves-light">
+							<input type="submit" class="btn orange col s12" value="Save">
+						</div>
+					</div>
+
+					<div class="row small">
+						<div class="input-field col s12">
+							<?php if (!$this->session->userdata('logged_in')){ ?>
+									<p class="login-helper-link margin medium-small">
+										<a href="#login-modal" class="modal-trigger modal-close">Log In to save your options!</a>
+									</p>
+							<?php } ?>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!--================================ Map ================================-->
+	<!-- <script>
+		var map_height = $(window).height() - 220;
+		console.log(map_height);
+		$("#map").replaceWith("<div id='map' style='height: "+map_height+" !important;'></div>");
+	</script> -->
+
 	<div id="map"></div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2KaKcKloJYNmCAUJ7K342whmwBfgj_I0&signed_in=true&libraries=places&callback=initMap" async defer></script>
 	<script src="/assets/js/map.js"></script>

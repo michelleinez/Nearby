@@ -192,7 +192,11 @@ function createMarker(place, color) {
   google.maps.event.addListener(marker, 'click', function() {
 
     var popover_content = "";
-    popover_content += "<h6>" + place.name + "</h6>";
+	popover_content += "";
+    popover_content += "<strong style='font-size: 1.3rem;'>"
+	popover_content += "<img src='"+place.icon+"' alt='icon' width='15' height='15'>";
+	popover_content += " "+place.name + "</strong>";
+	popover_content += "<br />";
     if(place.opening_hours != undefined){
       if(place.opening_hours.open_now){
         popover_content += "<span style='color:green; float:right;'>Open Now!</span>";
@@ -218,7 +222,7 @@ function createMarker(place, color) {
 
     lat = place.geometry.location.lat();
     lng = place.geometry.location.lng();
-    console.log(place);
+    // console.log(place);
 
     popover_content += "<br />";
     popover_content += "<strong>Address: </strong>" + place.vicinity;

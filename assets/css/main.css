@@ -53,6 +53,7 @@
 
 .search-label:first-of-type {
 	text-align: right;
+	white-space: nowrap;
 }
 
 .search-button {
@@ -69,12 +70,38 @@
 	text-align: right;
 }
 
+/*============== how does it work ====================*/
+.caption {
+	padding: 0px 20px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+}
+
+.caption h4, .caption h5 {
+	color: black !important;
+}
+
+.slides {
+	margin-bottom: 100px !important;
+}
+
+/*================== map =================*/
+#map {
+  height: 30.6rem !important;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
 /*================== footer =================*/
 .page-footer{
 	background: #ff8533 !important;
-	height: 75px;
 	margin-top: 0px !important;
-	padding-top: 15px !important;
+	padding-top: 0px !important;
+
+	height: 50px !important;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
 }
 
 .footer-copyright {
@@ -83,4 +110,11 @@
 
 .page-footer .container {
 	margin-left: 25px;
+}
+
+.top-button {
+	position: fixed;
+	right: 1.3rem;
+	bottom: .5rem;
+	color: white;
 }

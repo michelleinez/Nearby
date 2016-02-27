@@ -78,18 +78,10 @@
 	</div>
 
 	<!-- temp image -  Map will go here -->
-	<div id="map" style="height: 65%;"></div>
+	<div id="map"></div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2KaKcKloJYNmCAUJ7K342whmwBfgj_I0&signed_in=true&libraries=places&callback=initMap" async defer></script>
 	<script src="/assets/js/map.js"></script>
 
-
-	<!--============================= body ==================================-->
-	<footer class="page-footer">
-		<div class="footer-copyright">
-			<div class="container">
-				© 2016 Copyright Team Kickass
-			</div>
-		</div>
-	</footer>
-</body>
+	<!--============================= footer ================================-->
+	<?php $this->load->view('/partials/footer'); ?>
 </html>

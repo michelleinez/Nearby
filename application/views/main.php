@@ -84,33 +84,38 @@
 
 	<!--============================= Options Modal =========================-->
 	<div class="row small">
-		<div id="options" class="modal">
+		<div id="options" class="modal col s10 offset-s1 m8 offset-m2 l6 offset-l3">
 			<div class="modal-content">
-				<form action='register-form' method="post">
+				<form action='options-form' method="post">
 					<div class="row small">
 						<div class="input-field center">
 							<h5 class="login-form-text center">Options</h5>
 						</div>
 					</div>
 					<div class="row small">
-						<div class="input-field col s6">
+						<div class="input-field col s12">
 							<i class="fa_down fa fa-location-arrow fa-lg prefix"></i>
-							<input type="text" id="location" name='location'>
-							<label for="location" class="center-align">Starting Location</label>
+							<input type="text" id="start_location" name='start_location'>
+							<label for="start_location">Starting Location</label>
 						</div>
-						<div class="input-field col s6">
+					</div>
+					<div class="row small">
+						<label>Search Radius</label>
+					</div>
+					<div class="row small">
+						<div class="input-field col s12">
 							<p class="range-field">
 								<i class="fa fa-dot-circle-o fa-lg prefix"></i>
-								<input type="range" id="search_range" min="0 " max="100" />
+								<input type="range" id="search_radius" min="1000" max="10000" />
 							</p>
 						</div>
 					</div>
 
 					<div class="row small">
-						<div class="input-field col s2 offset-s8 waves-effect waves-light">
-							<input type="submit" class="btn grey col s12" value="Cancel">
+						<div class="input-field col s4 offset-s4 m3 offset-m6 l3 offset-l6 waves-effect waves-light">
+							<input type="" class="modal-close btn grey col s12" value="Cancel">
 						</div>
-						<div class="input-field col s2 waves-effect waves-light">
+						<div class="input-field col s4 m3 l3 waves-effect waves-light">
 							<input type="submit" class="btn orange col s12" value="Save">
 						</div>
 					</div>

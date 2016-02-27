@@ -44,31 +44,31 @@
 	<div class="row small">
 		<form class="col s12" id="searchform1">
 			<div class="row">
-				<div class="col l4 offset-l1 no_padding">
+				<div class="col l4 offset-l1 no-padding">
 					<div class='col l4 s3 align-right'>
 						<label class="search-label">Find a</label>
 					</div>
 					<div class="col s1">
-						<img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" class='search_marker'/>
+						<img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" class='search-marker'/>
 					</div>
 					<div class="input-field col l7 s8">
 						<input id="searchbox1" placeholder="movie theater" type="text" class="search-text">
 					</div>
 				</div>
 
-				<div class="col l4 no_padding">
+				<div class="col l4 no-padding">
 					<div class='col s3 center'>
 						<label class="search-label">with</label>
 					</div>
 					<div class="col s1">
-						<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" class='search_marker'/>
+						<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" class='search-marker'/>
 					</div>
 					<div class="input-field col s8">
 						<input id="searchbox2" placeholder="ice cream" type="text" class="search-text">
 					</div>
 				</div>
 
-				<div class="col l2 no_padding">
+				<div class="col l2 no-padding">
 					<div class='col s7'>
 						<label class="search-label">nearby!</label>
 					</div>
@@ -79,7 +79,7 @@
 			</div>
 		</form>
 
-		<a href="#options" class="col s4 l2 offset-s8 offset-l10 modal-trigger"><i class="fa fa-cog"></i> Search Options</a>
+		<a href="#options" class="col s4 m3 l2 right modal-trigger"><i class="fa fa-cog"></i> Search Options</a>
 	</div>
 
 	<!--============================= Options Modal =========================-->
@@ -94,18 +94,18 @@
 					</div>
 					<div class="row small">
 						<div class="input-field col s12">
-							<i class="fa_down fa fa-location-arrow fa-lg prefix"></i>
+							<i class="location-icon fa fa-location-arrow fa-lg prefix"></i>
 							<input type="text" id="start_location" name='start_location'>
 							<label for="start_location">Starting Location</label>
 						</div>
 					</div>
-					<div class="row small">
+					<!-- <div class="row small">
 						<label>Search Radius</label>
-					</div>
+					</div> -->
 					<div class="row small">
 						<div class="input-field col s12">
 							<p class="range-field">
-								<i class="fa fa-dot-circle-o fa-lg prefix"></i>
+								<i class="fa fa-dot-circle-o fa-2x float-left"><span class='radius-label'> Search Radius</span></i>
 								<input type="range" id="search_radius" min="1000" max="10000" />
 							</p>
 						</div>

@@ -85,11 +85,16 @@
 	margin-bottom: 100px !important;
 }
 
-/*================== map =================*/
+/*===================== map =================*/
 #map {
-  height: 30.6rem !important;
-  width: 100%;
-  margin-bottom: 50px;
+	height: 30.6rem !important;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.fa_down {
+	position: relative;
+	top: .8rem;
 }
 
 /*================== footer =================*/

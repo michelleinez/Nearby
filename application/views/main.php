@@ -44,31 +44,31 @@
 	<div class="row small">
 		<form class="col s12" id="searchform1">
 			<div class="row">
-				<div class="col l4 offset-l1 no_padding">
+				<div class="col l4 offset-l1 no-padding">
 					<div class='col l4 s3 align-right'>
 						<label class="search-label">Find a</label>
 					</div>
 					<div class="col s1">
-						<img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" class='search_marker'/>
+						<img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" class='search-marker'/>
 					</div>
 					<div class="input-field col l7 s8">
 						<input id="searchbox1" placeholder="movie theater" type="text" class="search-text">
 					</div>
 				</div>
 
-				<div class="col l4 no_padding">
+				<div class="col l4 no-padding">
 					<div class='col s3 center'>
 						<label class="search-label">with</label>
 					</div>
 					<div class="col s1">
-						<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" class='search_marker'/>
+						<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" class='search-marker'/>
 					</div>
 					<div class="input-field col s8">
 						<input id="searchbox2" placeholder="ice cream" type="text" class="search-text">
 					</div>
 				</div>
 
-				<div class="col l2 no_padding">
+				<div class="col l2 no-padding">
 					<div class='col s7'>
 						<label class="search-label">nearby!</label>
 					</div>
@@ -79,60 +79,11 @@
 			</div>
 		</form>
 
-		<a href="#options" class="col s4 l2 offset-s8 offset-l10 modal-trigger"><i class="fa fa-cog"></i> Search Options</a>
+		<a href="#options" class="col s5 m3 l2 right modal-trigger options-link"><i class="fa fa-cog"></i> Search Options</a>
 	</div>
 
-	<!--============================= Options Modal =========================-->
-	<div class="row small">
-		<div id="options" class="modal col s10 offset-s1 m8 offset-m2 l6 offset-l3">
-			<div class="modal-content">
-				<form action='options-form' method="post">
-					<div class="row small">
-						<div class="input-field center">
-							<h5 class="login-form-text center">Options</h5>
-						</div>
-					</div>
-					<div class="row small">
-						<div class="input-field col s12">
-							<i class="fa_down fa fa-location-arrow fa-lg prefix"></i>
-							<input type="text" id="start_location" name='start_location'>
-							<label for="start_location">Starting Location</label>
-						</div>
-					</div>
-					<div class="row small">
-						<label>Search Radius</label>
-					</div>
-					<div class="row small">
-						<div class="input-field col s12">
-							<p class="range-field">
-								<i class="fa fa-dot-circle-o fa-lg prefix"></i>
-								<input type="range" id="search_radius" min="1000" max="10000" />
-							</p>
-						</div>
-					</div>
-
-					<div class="row small">
-						<div class="input-field col s4 offset-s4 m3 offset-m6 l3 offset-l6 waves-effect waves-light">
-							<input type="" class="modal-close btn grey col s12" value="Cancel">
-						</div>
-						<div class="input-field col s4 m3 l3 waves-effect waves-light">
-							<input type="submit" class="btn orange col s12" value="Save">
-						</div>
-					</div>
-
-					<div class="row small">
-						<div class="input-field col s12">
-							<?php if (!$this->session->userdata('logged_in')){ ?>
-									<p class="login-helper-link margin medium-small">
-										<a href="#login-modal" class="modal-trigger modal-close">Log In to save your options!</a>
-									</p>
-							<?php } ?>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+	<!--============================= footer ================================-->
+	<?php $this->load->view('/partials/options'); ?>
 
 	<!--================================ Map ================================-->
 	<!-- <script>

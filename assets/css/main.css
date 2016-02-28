@@ -45,7 +45,7 @@
 	font-size: 1.8rem !important;
 }
 
-.search_marker {
+.search-marker {
 	position: relative;
 	top: 1.4rem;
 	right: .5rem;
@@ -62,12 +62,17 @@
 	left: 1.1rem;
 }
 
-.no_padding {
+.no-padding {
 	padding: 0px !important;
 }
 
 .align-right {
 	text-align: right;
+}
+
+.options-link {
+	position: relative;
+	bottom: 1rem;
 }
 
 /*============== how does it work ====================*/
@@ -92,9 +97,23 @@
 	margin-bottom: 50px;
 }
 
-.fa_down {
+.location-icon {
 	position: relative;
 	top: .8rem;
+}
+
+.radius-label {
+	font-size: 1rem;
+	color: grey;
+	margin-left: .7rem;
+}
+
+.no-margin {
+	margin: 0px !important;
+}
+
+.no-padding-left {
+	padding-left: 0px !important;
 }
 
 /*================== footer =================*/

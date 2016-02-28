@@ -79,60 +79,11 @@
 			</div>
 		</form>
 
-		<a href="#options" class="col s4 m3 l2 right modal-trigger"><i class="fa fa-cog"></i> Search Options</a>
+		<a href="#options" class="col s5 m3 l2 right modal-trigger"><i class="fa fa-cog"></i> Search Options</a>
 	</div>
 
-	<!--============================= Options Modal =========================-->
-	<div class="row small">
-		<div id="options" class="modal col s10 offset-s1 m8 offset-m2 l6 offset-l3">
-			<div class="modal-content">
-				<form action='options-form' method="post">
-					<div class="row small">
-						<div class="input-field center">
-							<h5 class="login-form-text center">Options</h5>
-						</div>
-					</div>
-					<div class="row small">
-						<div class="input-field col s12">
-							<i class="location-icon fa fa-location-arrow fa-lg prefix"></i>
-							<input type="text" id="start_location" name='start_location'>
-							<label for="start_location">Starting Location</label>
-						</div>
-					</div>
-					<!-- <div class="row small">
-						<label>Search Radius</label>
-					</div> -->
-					<div class="row small">
-						<div class="input-field col s12">
-							<p class="range-field">
-								<i class="fa fa-dot-circle-o fa-2x float-left"><span class='radius-label'> Search Radius</span></i>
-								<input type="range" id="search_radius" min="1000" max="10000" />
-							</p>
-						</div>
-					</div>
-
-					<div class="row small">
-						<div class="input-field col s4 offset-s4 m3 offset-m6 l3 offset-l6 waves-effect waves-light">
-							<input type="" class="modal-close btn grey col s12" value="Cancel">
-						</div>
-						<div class="input-field col s4 m3 l3 waves-effect waves-light">
-							<input type="submit" class="btn orange col s12" value="Save">
-						</div>
-					</div>
-
-					<div class="row small">
-						<div class="input-field col s12">
-							<?php if (!$this->session->userdata('logged_in')){ ?>
-									<p class="login-helper-link margin medium-small">
-										<a href="#login-modal" class="modal-trigger modal-close">Log In to save your options!</a>
-									</p>
-							<?php } ?>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+	<!--============================= footer ================================-->
+	<?php $this->load->view('/partials/options'); ?>
 
 	<!--================================ Map ================================-->
 	<!-- <script>

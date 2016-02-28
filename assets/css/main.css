@@ -98,9 +98,17 @@
 }
 
 .radius-label {
-	font-size: 1rem;
+	font-size: .9rem;
 	color: grey;
-	margin-left: 1rem;
+	margin-left: .5rem;
+}
+
+.no-margin {
+	margin: 0px !important;
+}
+
+.no-padding-left {
+	padding-left: 0px !important;
 }
 
 /*================== footer =================*/

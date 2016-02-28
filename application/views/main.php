@@ -79,7 +79,7 @@
 			</div>
 		</form>
 
-		<a href="#options" class="col s5 m3 l2 right modal-trigger"><i class="fa fa-cog"></i> Search Options</a>
+		<a href="#options" class="col s5 m3 l2 right modal-trigger options-link"><i class="fa fa-cog"></i> Search Options</a>
 	</div>
 
 	<!--============================= footer ================================-->

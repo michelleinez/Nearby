@@ -70,6 +70,11 @@
 	text-align: right;
 }
 
+.options-link {
+	position: relative;
+	bottom: 1rem;
+}
+
 /*============== how does it work ====================*/
 .caption {
 	padding: 0px 20px;
@@ -98,9 +103,9 @@
 }
 
 .radius-label {
-	font-size: .9rem;
+	font-size: 1rem;
 	color: grey;
-	margin-left: .5rem;
+	margin-left: .7rem;
 }
 
 .no-margin {

@@ -85,15 +85,15 @@
 					<!-- buttons -->
 				<div class="row small">
 					<?php if ($this->session->userdata('logged_in')){ ?>
-						<div class="input-field col s4 m4 l3 right waves-effect waves-light">
+						<div class="input-field col s6 m4 l3 right waves-effect waves-light">
 							<input type="submit" class="btn orange col s12" value="SAVE">
 						</div>
 					<?php } ?>
-					<div class="input-field col s5 m4 l3 right waves-effect waves-light">
+					<div class="input-field col s6 m4 l3 right waves-effect waves-light">
 						<input type="submit" class="btn blue col s12" value="APPLY">
 					</div>
 					<?php if (!$this->session->userdata('logged_in')){ ?>
-						<div class="input-field col s7 m9 l10 waves-effect waves-light">
+						<div class="input-field col s7 m8 l9 waves-effect waves-light">
 							<p class="login-helper-link margin medium-small">
 								<a href="#login-modal" class="modal-trigger modal-close"><strong>Log In</strong> to save your options!</a>
 							</p>

@@ -22,16 +22,17 @@
 				<?php } ?>
 			</ul>
 
-			<a class='dropdown-button right hide-on-large-only' href='#' data-beloworigin='true' data-constrainwidth='false' data-activates='dropdown'><i class="material-icons">menu</i></a>
-			<ul id='dropdown' class='dropdown-content'>
-				<li><a href="how-does-it-work">How does it work?</a></li>
-				<li><a href="mailto:nearby.rocks@gmail.com?Subject=Feedback" target="_top" class="waves-effect waves-light">Give Feedback!</a></li>
+			<a href="#" data-activates="slide-out" class="button-collapse right"><i class="mdi-navigation-menu"></i></a>
+			<ul id='slide-out' class='side-nav'>
 				<?php if ($this->session->userdata('logged_in')){ ?>
 						<li><a href="log-out">Log Out</a></li>
 				<?php } else { ?>
 						<li><a href="#login-modal" class="modal-trigger">Log In</a></li>
 				<?php } ?>
+				<li><a href="mailto:nearby.rocks@gmail.com?Subject=Feedback" target="_top" class="waves-effect waves-light">Give Feedback!</a></li>
+				<li><a href="how-does-it-work">How does it work?</a></li>
 			</ul>
+
 		</div>
 	</nav>
 
@@ -82,8 +83,10 @@
 		<a href="#options" class="col s5 m3 l2 right modal-trigger options-link"><i class="fa fa-cog"></i> Search Options</a>
 	</div>
 
-	<!--============================= footer ================================-->
-	<?php $this->load->view('/partials/options'); ?>
+	<!--============================= options ================================-->
+	<?php
+		$this->load->view('/partials/options');
+	?>
 
 	<!--================================ Map ================================-->
 	<!-- <script>

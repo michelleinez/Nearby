@@ -14,6 +14,7 @@ var search_radius = 1000;
 var distance_from_user = 5000;
 var map_zoom_level = 12;
 
+//grabs values from the input fields
 $("#searchform1").submit(function(event){
   event.preventDefault();
   search_terms = $('#searchbox1').val();
@@ -32,6 +33,7 @@ function initMap() {
   });
 
 
+  //listens for window resize to adjust map dimensions appropriately
   google.maps.event.addDomListener(window, 'resize', function(){
 	  var center = map.getCenter();
 	  google.maps.event.trigger(map, "resize");
@@ -105,6 +107,7 @@ function init_cluster_search(){
     latitude = validated_results[i].geometry.location.lat();
     longitude = validated_results[i].geometry.location.lng();
 
+    //initialize a new search to get clusters
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
       //location = where to search near

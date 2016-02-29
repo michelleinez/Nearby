@@ -45,7 +45,7 @@
 	font-size: 1.8rem !important;
 }
 
-.search_marker {
+.search-marker {
 	position: relative;
 	top: 1.4rem;
 	right: .5rem;
@@ -62,12 +62,17 @@
 	left: 1.1rem;
 }
 
-.no_padding {
+.no-padding {
 	padding: 0px !important;
 }
 
 .align-right {
 	text-align: right;
+}
+
+.options-link {
+	position: relative;
+	bottom: 1rem;
 }
 
 /*============== how does it work ====================*/
@@ -86,15 +91,34 @@
 }
 
 /*===================== map =================*/
-#map {
-	height: 30.6rem !important;
-	width: 100%;
-	margin-bottom: 50px;
+body, html {
+  height: 100%;
+  width: 100%;
 }
 
-.fa_down {
+#map {
+	height: 70% !important;
+	width: 100%;
+	margin-bottom: 3.4rem !important;
+}
+
+.location-icon {
 	position: relative;
 	top: .8rem;
+}
+
+.radius-label {
+	font-size: 1rem;
+	color: grey;
+	margin-left: .7rem;
+}
+
+.no-margin {
+	margin: 0px !important;
+}
+
+.no-padding-left {
+	padding-left: 0px !important;
 }
 
 /*================== footer =================*/
@@ -118,7 +142,7 @@
 }
 
 .top-button {
-	position: fixed;
+	position: absolute;
 	right: 1.3rem;
 	bottom: .5rem;
 	color: white;

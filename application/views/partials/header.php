@@ -26,7 +26,11 @@
 <script>
 	$( document ).ready(function(){
 		// sideNav handeler
-		$(".button-collapse").sideNav();
+		$(".button-collapse").sideNav({
+				edge: 'right',
+				closeOnClick: true
+			}
+		);
 
 		// login and register modal handler
 		$('.modal-trigger').leanModal();

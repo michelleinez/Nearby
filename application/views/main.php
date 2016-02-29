@@ -89,12 +89,6 @@
 	?>
 
 	<!--================================ Map ================================-->
-	<!-- <script>
-		var map_height = $(window).height() - 220;
-		console.log(map_height);
-		$("#map").replaceWith("<div id='map' style='height: "+map_height+" !important;'></div>");
-	</script> -->
-
 	<div id="map"></div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2KaKcKloJYNmCAUJ7K342whmwBfgj_I0&signed_in=true&libraries=places&callback=initMap" async defer></script>
 	<script src="/assets/js/map.js"></script>

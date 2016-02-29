@@ -6,7 +6,6 @@ var validated_clusters = [];
 var result_indices_with_clusters = [];
 var search_terms = "";
 var search_terms2 = "";
-var circleClickHandler;
 var user_position;
 
 // options
@@ -19,7 +18,7 @@ $("#searchform1").submit(function(event){
   event.preventDefault();
   search_terms = $('#searchbox1').val();
   search_terms2 = $('#searchbox2').val();
-  if(search_terms != '' && search_terms2 != ''){
+  if(search_terms !== '' && search_terms2 !== ''){
     init_search(search_terms);
   }
 });
@@ -32,6 +31,13 @@ function initMap() {
     zoom: map_zoom_level
   });
 
+
+  google.maps.event.addDomListener(window, 'resize', function(){
+	  var center = map.getCenter();
+	  google.maps.event.trigger(map, "resize");
+	  map.setCenter(center);
+  });
+  // google.maps.event.addDomListener(window, 'load', initialize);
 
   //window layer on top of map for tooltips
   infowindow = new google.maps.InfoWindow();

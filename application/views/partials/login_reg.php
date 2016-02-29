@@ -155,7 +155,7 @@ function testAPI() {
 -->
 
 <div class="row small">
-	<div id="login-modal" class="modal col s10 offset-s1 m6 offset-m3 l4 offset-l4">
+	<div id="login-modal" class="modal col s12 m6 offset-m3 l4 offset-l4">
 		<div class="modal-content">
 			<form action='login-form' method="post">
 				<div class="row small">
@@ -170,30 +170,30 @@ function testAPI() {
 						<label for="email" class="center-align">Email</label>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row small">
 					<div class="input-field col s12">
 						<i class="mdi-action-lock-outline prefix"></i>
 						<input type="password" id="password" name="password">
 						<label for="password">Password</label>
 					</div>
 				</div>
-				<div class="row small">
+				<!-- <div class="row small">
 					<div class="input-field col s12 remember-check">
 						<input type="checkbox"  id="remember-me" name="remember-me">
 						<label for="remember-me">Remember me</label>
 					</div>
-				</div>
+				</div> -->
 				<div class="row">
 					<div class="input-field col s12 waves-effect waves-light">
 						<input type="submit" class="btn orange col s12" value="Login">
 					</div>
 				</div>
 				<div class="row small">
-					<div class="input-field login-helper-link col s6">
+					<div class="input-field login-helper-link col s6 center">
 						<fb:login-button class='z-depth-1 hoverable' data-size='xlarge' scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 					</div>
-					<div class="input-field login-helper-link col s6">
-						<div class="g-signin2 hoverable" data-width="153" data-height="39" data-onsuccess="onSignIn"></div>
+					<div class="input-field login-helper-link col s6 center">
+						<div class="g-signin2" data-width="153" data-height="39" data-onsuccess="onSignIn"></div>
 					</div>
 				</div>
 				<div class="row small">
@@ -222,7 +222,7 @@ function testAPI() {
 -->
 
 <div class="row small">
-	<div id="register-modal" class="modal col s10 offset-s1 m6 offset-m3 l4 offset-l4 ">
+	<div id="register-modal" class="modal col s12 m6 offset-m3 l4 offset-l4 ">
 		<div class="modal-content">
 			<form action='register-form' method="post">
 				<div class="row small">

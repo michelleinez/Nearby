@@ -87,25 +87,29 @@ function validate_first_results(results, status) {
         validated_results.push(results[i]);
       }
     }
+  }
+  init_cluster_search();
+}
 
-    for (var i = 0; i < validated_results.length; i++){
+function init_cluster_search(){
 
-      rating = validated_results[i].rating;
-      latitude = validated_results[i].geometry.location.lat();
-      longitude = validated_results[i].geometry.location.lng();
+  for (var i = 0; i < validated_results.length; i++){
 
-      var service = new google.maps.places.PlacesService(map);
-      service.nearbySearch({
-        //location = where to search near
-        location: {lat: latitude, lng: longitude},
-        //how far from location to search for things
-        radius: search_radius,
-        //keyword = search term taken from searchbox1
-        keyword: search_terms2
+    rating = validated_results[i].rating;
+    latitude = validated_results[i].geometry.location.lat();
+    longitude = validated_results[i].geometry.location.lng();
 
-      }, validate_clusters.bind(null, i));
-      //find out more about why this works
-    }
+    var service = new google.maps.places.PlacesService(map);
+    service.nearbySearch({
+      //location = where to search near
+      location: {lat: latitude, lng: longitude},
+      //how far from location to search for things
+      radius: search_radius,
+      //keyword = search term taken from searchbox1
+      keyword: search_terms2
+
+    }, validate_clusters.bind(null, i));
+    //find out more about why this works
   }
 }
 
@@ -176,7 +180,6 @@ function get_geolocation_of_user(){
     handleLocationError(false, infowindow, map.getCenter());
     //ask for current location if geolocation isn't working
   }
-
 }
 
 function createMarker(place, color) {
@@ -191,9 +194,8 @@ function createMarker(place, color) {
 
   google.maps.event.addListener(marker, 'click', function() {
 
-    var popover_content = "";
-	popover_content += "";
-    popover_content += "<strong style='font-size: 1.3rem;'>"
+  var popover_content = "";
+  popover_content += "<strong style='font-size: 1.3rem;'>"
 	popover_content += "<img src='"+place.icon+"' alt='icon' width='15' height='15'>";
 	popover_content += " "+place.name + "</strong>";
 	popover_content += "<br />";

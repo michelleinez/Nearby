@@ -4,6 +4,26 @@
 	<meta charset="utf-8">
 	<title>Nearby</title>
 	<?php $this->load->view('/partials/header'); ?>
+	<script>
+		$( document ).ready(function(){
+			// sideNav handeler
+			$(".button-collapse").sideNav({
+					edge: 'right',
+					closeOnClick: true
+				}
+			);
+
+			// modal handler
+			$('.modal-trigger').leanModal();
+
+			// set options variables
+			$("#radius_from_location").val(radius_from_location);
+			$("#cluster_radius").val(cluster_radius);
+
+			// sets search_position to user_position if geolocation worked
+			get_geolocation_of_user();
+		})
+	</script>
 </head>
 <body>
 	<nav>
@@ -15,19 +35,18 @@
 				<li><a href="how-does-it-work" class="waves-effect waves-light">How does it work?</a></li>
 				<li><a href="mailto:nearby.rocks@gmail.com?Subject=Feedback" target="_top" class="waves-effect waves-light">Give Feedback!</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
-						<li><a href="log-out" onclick='signOut();' class="waves-effect waves-light">Log Out</a></li>
+						<!-- <li><a href="log-out" onclick='signOut();' class="waves-effect waves-light">Log Out</a></li> -->
 				<?php } else { ?>
-						<li>
-							<a href="#login-modal" class="waves-effect waves-light modal-trigger">Log In</a></li>
+						<!-- <li><a href="#login-modal" class="waves-effect waves-light modal-trigger">Log In</a></li> -->
 				<?php } ?>
 			</ul>
 
 			<a href="#" data-activates="slide-out" class="button-collapse right"><i class="mdi-navigation-menu"></i></a>
 			<ul id='slide-out' class='side-nav'>
 				<?php if ($this->session->userdata('logged_in')){ ?>
-						<li><a href="log-out">Log Out</a></li>
+						<!-- <li><a href="log-out">Log Out</a></li> -->
 				<?php } else { ?>
-						<li><a href="#login-modal" class="modal-trigger">Log In</a></li>
+						<!-- <li><a href="#login-modal" class="modal-trigger">Log In</a></li> -->
 				<?php } ?>
 				<li><a href="mailto:nearby.rocks@gmail.com?Subject=Feedback" target="_top" class="waves-effect waves-light">Give Feedback!</a></li>
 				<li><a href="how-does-it-work">How does it work?</a></li>
@@ -80,7 +99,7 @@
 			</div>
 		</form>
 
-		<a href="#options" class="col s5 m3 l2 right modal-trigger options-link"><i class="fa fa-cog"></i> Search Options</a>
+		<a id="options-link" href="#options" class="col s5 m3 l2 right modal-trigger options-link"><i class="fa fa-cog"></i> Search Options</a>
 	</div>
 
 	<!--============================= options ================================-->
@@ -90,7 +109,7 @@
 
 	<!--================================ Map ================================-->
 	<div id="map"></div>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2KaKcKloJYNmCAUJ7K342whmwBfgj_I0&signed_in=true&libraries=places&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLpRWMwoxfXI4F2hJ6g2jWoKMMjvdj-S0&signed_in=true&libraries=places&callback=initMap" async defer></script>
 	<script src="/assets/js/map.js"></script>
 
 	<!--============================= footer ================================-->

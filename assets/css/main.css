@@ -1,3 +1,22 @@
+/*================== helper ===================*/
+.no-margin {
+	margin: 0px !important;
+}
+
+.no-padding {
+	padding: 0px !important;
+}
+
+.space {
+	margin-bottom: 1.5rem !important;
+}
+
+#toast-container {		/*	will be used for no results notification*/
+    position: fixed !important;
+    bottom: 50vh !important;
+    left: 50vh !important;
+}
+
 /*================== nav bar ===================*/
 .nav-wrapper {
 	background: #ff8533;
@@ -25,8 +44,16 @@
 }
 
 .small {
-	margin-bottom: 0px;
-	padding-bottom: 0px;
+	margin-bottom: 0px !important;
+	padding-bottom: 0px !important;
+}
+
+.pac-container {
+    z-index: 1051 !important;
+}
+
+.range-img {
+	height: 1.25rem;
 }
 
 /*==================== search form ===================*/
@@ -97,9 +124,9 @@ body, html {
 }
 
 #map {
-	height: 70% !important;
+	height: 65% !important;
 	width: 100%;
-	margin-bottom: 3.4rem !important;
+	margin-bottom: 3.125rem !important;
 }
 
 .location-icon {
@@ -107,18 +134,10 @@ body, html {
 	top: .8rem;
 }
 
-.radius-label {
+.options-label {
 	font-size: 1rem;
 	color: grey;
 	margin-left: .7rem;
-}
-
-.no-margin {
-	margin: 0px !important;
-}
-
-.no-padding-left {
-	padding-left: 0px !important;
 }
 
 /*================== footer =================*/

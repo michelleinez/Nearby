@@ -22,20 +22,3 @@
 
 <!-- favicon -->
 <link rel="icon" href="favicon.ico" />
-
-<script>
-	$( document ).ready(function(){
-		// sideNav handeler
-		$(".button-collapse").sideNav({
-				edge: 'right',
-				closeOnClick: true
-			}
-		);
-
-		// login and register modal handler
-		$('.modal-trigger').leanModal();
-
-		// slider
-		$('.slider').slider({full_width: true});
-	})
-</script>

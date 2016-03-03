@@ -4,6 +4,21 @@
 	<meta charset="utf-8">
 	<title>Nearby - How does it work</title>
 	<?php $this->load->view('/partials/header'); ?>
+	<script>
+		$( document ).ready(function(){
+			// sideNav handeler
+			$(".button-collapse").sideNav({
+					edge: 'right',
+					closeOnClick: true
+				}
+			);
+
+			// modal handler
+			$('.modal-trigger').leanModal();
+			// slider handler
+			$('.slider').slider({full_width: true});
+		})
+	</script>
 </head>
 <body>
 	<nav>
@@ -16,18 +31,18 @@
 				<li><a href="/" class="waves-effect waves-light">Home</a></li>
 				<li><a href="mailto:nearby.rocks@gmail.com?Subject=Feedback" target="_top" class="waves-effect waves-light">Give Feedback!</a></li>
 				<?php if ($this->session->userdata('logged_in')){ ?>
-						<li><a href="log-out" class="waves-effect waves-light">Log Out</a></li>
+						<!-- <li><a href="log-out" class="waves-effect waves-light">Log Out</a></li> -->
 				<?php } else { ?>
-						<li><a href="#login-modal" class="waves-effect waves-light modal-trigger">Log In</a></li>
+						<!-- <li><a href="#login-modal" class="waves-effect waves-light modal-trigger">Log In</a></li> -->
 				<?php } ?>
 			</ul>
 
 			<a href="#" data-activates="slide-out" class="button-collapse right"><i class="mdi-navigation-menu"></i></a>
 			<ul id='slide-out' class='side-nav'>
 				<?php if ($this->session->userdata('logged_in')){ ?>
-						<li><a href="log-out">Log Out</a></li>
+						<!-- <li><a href="log-out">Log Out</a></li> -->
 				<?php } else { ?>
-						<li><a href="#login-modal" class="modal-trigger">Log In</a></li>
+						<!-- <li><a href="#login-modal" class="modal-trigger">Log In</a></li> -->
 				<?php } ?>
 				<li><a href="/" class="waves-effect waves-light">Home</a></li>
 				<li><a href="mailto:nearby.rocks@gmail.com?Subject=Feedback" target="_top" class="waves-effect waves-light">Give Feedback!</a></li>

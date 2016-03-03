@@ -26,7 +26,7 @@
 						</div>
 						<div class="input-field col s12">
 							<p class="range-field no-margin">
-								<input type="range" id="radius_from_location" min="1000" step='10' max="15000"/>
+								<input type="range" id="radius_from_location" min="1000" step='100' max="15000"/>
 							</p>
 						</div>
 					</div>

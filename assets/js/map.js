@@ -153,7 +153,7 @@ function create_user_Circle(location){
 		fillOpacity: 0.0,
 		map: map,
 		center: location,
-		radius: radius_from_location+700
+		radius: radius_from_location+(radius_from_location/4)
 	});
 	console.log('radius form location', radius_from_location);
 }

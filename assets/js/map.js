@@ -188,11 +188,19 @@ function set_search_position(location){
 
 function add_user_marker(user_position){
 	// console.log("add_user_marker -> user_position", user_position);
+	var dot = {
+		url: "/assets/userdot.png",
+		size: new google.maps.Size(21,21),
+		origin: new google.maps.Point(0,0),
+		anchor: new google.maps.Point(11,11)
+	};
+
 	var marker = new google.maps.Marker({
 		map: map,
-		position: user_position
+		position: user_position,
+		icon: dot
 	});
-	marker.setIcon('/assets/userdot.png');
+
 	create_user_Circle(user_position);
 }
 

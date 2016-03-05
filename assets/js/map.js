@@ -58,6 +58,20 @@ $('#options').submit(function(event){
 	radius_from_location = parseFloat($('#radius_from_location').val());
 	cluster_radius = parseFloat($('#cluster_radius').val());
 
+	var rad = radius_from_location;
+	if(rad <= 1400 ){
+		map_zoom_level = 15;
+	} else if (rad > 1400 && rad <= 2400){
+		map_zoom_level = 14;
+	} else if (rad > 2400 && rad <= 4500){
+		map_zoom_level = 13;
+	} else if (rad > 4500 && rad <= 8500){
+		map_zoom_level = 12;
+	} else if (rad > 8500 && rad <= 15000){
+		map_zoom_level = 11;
+	}
+	// console.log(rad, map_zoom_level);
+
 	if (address){
 		pos_from_address(address, function(){
 			if(search_location){
